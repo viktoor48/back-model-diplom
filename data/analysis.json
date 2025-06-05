@@ -1,0 +1,2732 @@
+[
+  {
+    "camera_id": 2,
+    "track_id": "trk_0000",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:49:49Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088409053594134,
+    "lon": 5.7520255568142895
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0001",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:06:34Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08854099777489,
+    "lon": 5.752114640794592
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0002",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:56:08Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08861028031609,
+    "lon": 5.752200440230756
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0003",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:48:34Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08842374367101,
+    "lon": 5.752017787820483
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0004",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:35:08Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08848140566869,
+    "lon": 5.752043091682361
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0005",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:11Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088431319662284,
+    "lon": 5.751949706139475
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0006",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:23:50Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08836136847908,
+    "lon": 5.751951295697513
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0007",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:36:25Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08870965640197,
+    "lon": 5.752291092653073
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0008",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:37Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08859075352611,
+    "lon": 5.752201060368771
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0009",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:37Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088543603897435,
+    "lon": 5.752077939188827
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0010",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:26:51Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088488546549556,
+    "lon": 5.752070119398558
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0011",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:00:02Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08877650484881,
+    "lon": 5.752272460753936
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0012",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:17:02Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08882554674122,
+    "lon": 5.752397094636254
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0013",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:05:43Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088715569411754,
+    "lon": 5.752265075494571
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0014",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:00:23Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0884832584744,
+    "lon": 5.752028603396062
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0015",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:04:40Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088419362658406,
+    "lon": 5.751952194465907
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0016",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:30:11Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08855223892008,
+    "lon": 5.752125197783153
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0017",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:25:11Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088496029480794,
+    "lon": 5.752076665866979
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0018",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:34:35Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088691217206836,
+    "lon": 5.752206796887351
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0019",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:41Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0886928919046,
+    "lon": 5.75228571626725
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0020",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:41:35Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08856525462045,
+    "lon": 5.752071664182119
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0021",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:49Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08875380185549,
+    "lon": 5.752253964638414
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0022",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:05:24Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08865366816044,
+    "lon": 5.7521895273676025
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0023",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:35:45Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08844106524714,
+    "lon": 5.752003449379751
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0024",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:27:36Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08853844366178,
+    "lon": 5.75206954120704
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0025",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:34:59Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08880005496014,
+    "lon": 5.7523101760367465
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0026",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:25:44Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088768956636486,
+    "lon": 5.752351975248986
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0027",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:48:36Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088397295302336,
+    "lon": 5.751973555155546
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0028",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:11:07Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0886456403767,
+    "lon": 5.752177776889665
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0029",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:31:33Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08854848813137,
+    "lon": 5.752125596651732
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0030",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:44:04Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08874786028651,
+    "lon": 5.752315605651597
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0031",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:56Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08856753700102,
+    "lon": 5.752102044025876
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0032",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:07:45Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088568056657124,
+    "lon": 5.75217606151633
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0033",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:08:11Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08882815181533,
+    "lon": 5.752327588528125
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0034",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:29:12Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08863302769508,
+    "lon": 5.752153725123182
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0035",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:57Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08886740207966,
+    "lon": 5.752397442870959
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0036",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:26:53Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08885047967834,
+    "lon": 5.752427682906798
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0037",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:15:15Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088400923302565,
+    "lon": 5.751986044398228
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0038",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:10:38Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088606717782625,
+    "lon": 5.752168980817134
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0039",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:20:17Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088427049692406,
+    "lon": 5.752002369830349
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0040",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:39:38Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0886398439024,
+    "lon": 5.75214580688137
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0041",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:33Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08835480682126,
+    "lon": 5.751969842497679
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0042",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:25:48Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088816653690216,
+    "lon": 5.752335930840872
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0043",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:09:26Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08862872896434,
+    "lon": 5.752228653589979
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0044",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:13:27Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08839192019652,
+    "lon": 5.751993760136494
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0045",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:28:44Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08853233440662,
+    "lon": 5.7521237290133955
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0046",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:51Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088361590386974,
+    "lon": 5.751904902289756
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0047",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:56:53Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088762885469556,
+    "lon": 5.752310116137115
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0048",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:30:42Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08874958122536,
+    "lon": 5.752330612555257
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0049",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:59:39Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088775270504705,
+    "lon": 5.752330265311361
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0050",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:00:39Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08868590990242,
+    "lon": 5.752272918256475
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0051",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:47:31Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08886089506469,
+    "lon": 5.752425980235642
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0052",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:29Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08872603418037,
+    "lon": 5.752314282909494
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0053",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:11:49Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08852921495417,
+    "lon": 5.752117005206515
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0054",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:25:17Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088796754713975,
+    "lon": 5.752347608465842
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0055",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:21:42Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08840642080922,
+    "lon": 5.751981843510552
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0056",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:08Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08843782479768,
+    "lon": 5.75196074717811
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0057",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:35:58Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0888201414266,
+    "lon": 5.7524022161894965
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0058",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:52:10Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08874616070866,
+    "lon": 5.752322561772687
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0059",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:19:13Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088742610860976,
+    "lon": 5.752301581147313
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0060",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:50:26Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08853989013981,
+    "lon": 5.75210112756182
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0061",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:40:19Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088480761818374,
+    "lon": 5.7520639462306375
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0062",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:50:54Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08833835679833,
+    "lon": 5.751941268160065
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0063",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:10Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08865236996214,
+    "lon": 5.752184052860628
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0064",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:47Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08865473917209,
+    "lon": 5.752197308116084
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0065",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:06:28Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08849332783848,
+    "lon": 5.752006076697854
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0066",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:47:57Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08848123662673,
+    "lon": 5.752062365850715
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0067",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:25Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08868615376501,
+    "lon": 5.7522068258048416
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0068",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:20:22Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08881966727265,
+    "lon": 5.752398965318049
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0069",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:37:09Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08844365002187,
+    "lon": 5.752007945192026
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0070",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:54:57Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08862925890873,
+    "lon": 5.752185639610193
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0071",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:45Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08851806072306,
+    "lon": 5.752085834194995
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0072",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:56:11Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088438990121254,
+    "lon": 5.752003606557733
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0073",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:29:41Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088390747267994,
+    "lon": 5.751999685292169
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0074",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:18:26Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08877903410571,
+    "lon": 5.7523761455555595
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0075",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:24:36Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088531194234946,
+    "lon": 5.752076123495872
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0076",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:29:30Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088856708241494,
+    "lon": 5.752439529137118
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0077",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:13:53Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08847660441677,
+    "lon": 5.752074611225665
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0078",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:00:33Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088454698437715,
+    "lon": 5.752011754227801
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0079",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:49:46Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088609212173694,
+    "lon": 5.752181526781366
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0080",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:42Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08887454951225,
+    "lon": 5.752369597110214
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0081",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:02:18Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08856428500521,
+    "lon": 5.752148067114822
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0082",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:51Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088716161108074,
+    "lon": 5.752227345787684
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0083",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:45:23Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088615697907116,
+    "lon": 5.752127332135472
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0084",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:51:51Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088380613859535,
+    "lon": 5.7519686685074145
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0085",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:14:01Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08873538979488,
+    "lon": 5.752312304108794
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0086",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:34:39Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08836109323236,
+    "lon": 5.751915912878103
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0087",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:02:06Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088484533716645,
+    "lon": 5.7520772444715575
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0088",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:58:59Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08861227294965,
+    "lon": 5.752219400077024
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0089",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:16:50Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08837347751599,
+    "lon": 5.751892888786232
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0090",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:59:56Z",
+    "direction": "straight_to_turn",
+    "lat": 50.0884701242036,
+    "lon": 5.751983672184371
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0091",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:42:37Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088423974347364,
+    "lon": 5.752028914625829
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0092",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:21:12Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088860449363736,
+    "lon": 5.752403030602657
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0093",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:19:08Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088729549107,
+    "lon": 5.752317995838891
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0094",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:48Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08882001565058,
+    "lon": 5.752327641406843
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0095",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:29:27Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08868455639405,
+    "lon": 5.752215859939534
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0096",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:35Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08874076054336,
+    "lon": 5.7522663089255595
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0097",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:45:25Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08877939741366,
+    "lon": 5.752326553491367
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0098",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:48:57Z",
+    "direction": "straight_to_turn",
+    "lat": 50.08853145398858,
+    "lon": 5.752114752220824
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0099",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:49:13Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088652368376685,
+    "lon": 5.752186771779458
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0100",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:06:29Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08905481024648,
+    "lon": 5.752602516554773
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0101",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:43:54Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089215022315294,
+    "lon": 5.75272435396891
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0102",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:49Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08908831564837,
+    "lon": 5.752622485703527
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0103",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:37:09Z",
+    "direction": "straight_after_turn",
+    "lat": 50.0890715578314,
+    "lon": 5.75262480664932
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0104",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:56:30Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089229761946186,
+    "lon": 5.752713195900639
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0105",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:53:39Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088910224740715,
+    "lon": 5.752470387328437
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0106",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:19:03Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089161938007805,
+    "lon": 5.752660607509931
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0107",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:17:04Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08898793049577,
+    "lon": 5.752485542448946
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0108",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:15:52Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08887332473098,
+    "lon": 5.752447793116231
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0109",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:18:49Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08925283847094,
+    "lon": 5.752791643142711
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0110",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:22:01Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089211852676904,
+    "lon": 5.752706581685233
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0111",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:29:53Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089204266053564,
+    "lon": 5.7527320554064145
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0112",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:43:02Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08899015093832,
+    "lon": 5.752504008251971
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0113",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:24:17Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08915306940562,
+    "lon": 5.752647244278973
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0114",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:45:19Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08915721614341,
+    "lon": 5.752664605400433
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0115",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:23:50Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08901808174036,
+    "lon": 5.7525876049576254
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0116",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:36:18Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08923407580102,
+    "lon": 5.752718818178094
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0117",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:30:48Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08898711769497,
+    "lon": 5.7524963001015115
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0118",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:11:38Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08911570721073,
+    "lon": 5.752624419523624
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0119",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:39:32Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08904416209961,
+    "lon": 5.7526131098491815
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0120",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:25:11Z",
+    "direction": "straight_after_turn",
+    "lat": 50.0892563852537,
+    "lon": 5.7527271459968965
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0121",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:31:46Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08917370916534,
+    "lon": 5.7527212780497825
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0122",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:09:25Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088902154277434,
+    "lon": 5.752435781866559
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0123",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:50Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08919967914453,
+    "lon": 5.752764289421878
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0124",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:43:56Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08902783034242,
+    "lon": 5.752595311802955
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0125",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:05:33Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089133377672454,
+    "lon": 5.752667113516482
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0126",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:16:14Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08893256471851,
+    "lon": 5.752491295222577
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0127",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:58Z",
+    "direction": "straight_after_turn",
+    "lat": 50.0892380692613,
+    "lon": 5.75276245564958
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0128",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:40Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089205801254174,
+    "lon": 5.752732495374666
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0129",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:59:09Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08896299014986,
+    "lon": 5.752524341156462
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0130",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:49:29Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08894698066009,
+    "lon": 5.752434741882379
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0131",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:13:48Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089150185672786,
+    "lon": 5.752645804662289
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0132",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:11Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089118251954936,
+    "lon": 5.752625544538987
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0133",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:55:28Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08913626433915,
+    "lon": 5.75261662354834
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0134",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:50:26Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088938834763546,
+    "lon": 5.7524683608160725
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0135",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:23:15Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089233515060705,
+    "lon": 5.7527213279307166
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0136",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:07:35Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08926041577996,
+    "lon": 5.752778182494577
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0137",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:53:12Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089110390428814,
+    "lon": 5.752634835192181
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0138",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:40:40Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08895498371095,
+    "lon": 5.752475906472501
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0139",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:10:39Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08925328095046,
+    "lon": 5.752775228655713
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0140",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:35:12Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08917967016526,
+    "lon": 5.752708359545335
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0141",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:14:41Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089076768850255,
+    "lon": 5.752601353144623
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0142",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:57:02Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08910971062041,
+    "lon": 5.752656092426961
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0143",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:20:52Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08900567483384,
+    "lon": 5.752514140773348
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0144",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:57:36Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08904162078319,
+    "lon": 5.75256117430296
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0145",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:14:09Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08891006040929,
+    "lon": 5.752483567465262
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0146",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:43:06Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08905726761666,
+    "lon": 5.752617735566404
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0147",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:41:30Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08895134503462,
+    "lon": 5.752522780777773
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0148",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:35:47Z",
+    "direction": "straight_after_turn",
+    "lat": 50.0890712069238,
+    "lon": 5.75259242979135
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0149",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:55:22Z",
+    "direction": "straight_after_turn",
+    "lat": 50.0891244774084,
+    "lon": 5.7526360377932955
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0150",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:31:32Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08926837306415,
+    "lon": 5.752828519868669
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0151",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:37:02Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08890371242345,
+    "lon": 5.7524661673892155
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0152",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:06:08Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088983118445725,
+    "lon": 5.75249435916982
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0153",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:24Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08889650042478,
+    "lon": 5.75239654864703
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0154",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:58:17Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08911177322554,
+    "lon": 5.752665647360936
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0155",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:16:25Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08919141567603,
+    "lon": 5.752757530413257
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0156",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:51:28Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08892770849509,
+    "lon": 5.752484634252988
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0157",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:02:50Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08907369439533,
+    "lon": 5.752600315024825
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0158",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:02Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08907931521121,
+    "lon": 5.752569580422541
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0159",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:56:05Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089203614323125,
+    "lon": 5.752730999100913
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0160",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:50Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088984084401744,
+    "lon": 5.752471898047164
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0161",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:26:09Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088965047148704,
+    "lon": 5.75245659890571
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0162",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:07:06Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08896674094768,
+    "lon": 5.752546457272552
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0163",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:27:28Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089127750976836,
+    "lon": 5.75268023044973
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0164",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:47:17Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08925940776679,
+    "lon": 5.752799203064403
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0165",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:42:42Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08921566840238,
+    "lon": 5.752722137702664
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0166",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:52:12Z",
+    "direction": "straight_after_turn",
+    "lat": 50.089152361284015,
+    "lon": 5.75266711448115
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0167",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:34:49Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08910857514594,
+    "lon": 5.7526524795937934
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0168",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:41:00Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08888402721058,
+    "lon": 5.752445782313385
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0169",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:25Z",
+    "direction": "straight_after_turn",
+    "lat": 50.08892965477441,
+    "lon": 5.752511560934396
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0170",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:54:26Z",
+    "direction": "straight_turn",
+    "lat": 50.08885071977061,
+    "lon": 5.752468472377395
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0171",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:14:28Z",
+    "direction": "straight_turn",
+    "lat": 50.08892502728437,
+    "lon": 5.752567637903679
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0172",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:46Z",
+    "direction": "straight_turn",
+    "lat": 50.08913293346937,
+    "lon": 5.752786134873492
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0173",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:58Z",
+    "direction": "straight_turn",
+    "lat": 50.08919552929187,
+    "lon": 5.7528662756038536
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0174",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:38:25Z",
+    "direction": "straight_turn",
+    "lat": 50.08905335494199,
+    "lon": 5.752750238216257
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0175",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:52:29Z",
+    "direction": "straight_turn",
+    "lat": 50.0889061448685,
+    "lon": 5.752533935723813
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0176",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:17:29Z",
+    "direction": "straight_turn",
+    "lat": 50.08905134444745,
+    "lon": 5.752726988726211
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0177",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:46:58Z",
+    "direction": "straight_turn",
+    "lat": 50.08918628227457,
+    "lon": 5.752847605384804
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0178",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:59:40Z",
+    "direction": "straight_turn",
+    "lat": 50.089168738817904,
+    "lon": 5.752871487927319
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0179",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:42:56Z",
+    "direction": "straight_turn",
+    "lat": 50.08906513544187,
+    "lon": 5.752742985565807
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0180",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:51:00Z",
+    "direction": "straight_turn",
+    "lat": 50.08898438834985,
+    "lon": 5.752669199150162
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0181",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:15:44Z",
+    "direction": "straight_turn",
+    "lat": 50.08902224304997,
+    "lon": 5.752672484718068
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0182",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:31Z",
+    "direction": "straight_turn",
+    "lat": 50.089143481245756,
+    "lon": 5.752857006516971
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0183",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:41:37Z",
+    "direction": "straight_turn",
+    "lat": 50.08896964341725,
+    "lon": 5.752660285545874
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0184",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:02:35Z",
+    "direction": "straight_turn",
+    "lat": 50.08889873016907,
+    "lon": 5.75254309044817
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0185",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:44:08Z",
+    "direction": "straight_turn",
+    "lat": 50.088812750484394,
+    "lon": 5.752456956047347
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0186",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:39:27Z",
+    "direction": "straight_turn",
+    "lat": 50.08911918024646,
+    "lon": 5.7527882560987695
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0187",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:39:45Z",
+    "direction": "straight_turn",
+    "lat": 50.089156914205,
+    "lon": 5.752875210918643
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0188",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:21:49Z",
+    "direction": "straight_turn",
+    "lat": 50.08886880814121,
+    "lon": 5.752494085169257
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0189",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:00:22Z",
+    "direction": "straight_turn",
+    "lat": 50.08890586313388,
+    "lon": 5.752573874421174
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0190",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:32:12Z",
+    "direction": "straight_turn",
+    "lat": 50.088855331175544,
+    "lon": 5.752519810937434
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0191",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:07:49Z",
+    "direction": "straight_turn",
+    "lat": 50.089021667410876,
+    "lon": 5.752713919404977
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0192",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:31:10Z",
+    "direction": "straight_turn",
+    "lat": 50.088863618176866,
+    "lon": 5.752474934434106
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0193",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:22:00Z",
+    "direction": "straight_turn",
+    "lat": 50.08891558732477,
+    "lon": 5.752533598508327
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0194",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:31:17Z",
+    "direction": "straight_turn",
+    "lat": 50.0889403306787,
+    "lon": 5.752623689086386
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0195",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:55:29Z",
+    "direction": "straight_turn",
+    "lat": 50.08917454186658,
+    "lon": 5.752870701737533
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0196",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:33:41Z",
+    "direction": "straight_turn",
+    "lat": 50.08903939254816,
+    "lon": 5.752725134175193
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0197",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T12:03:58Z",
+    "direction": "straight_turn",
+    "lat": 50.088948133859056,
+    "lon": 5.752628631741891
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0198",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:26:19Z",
+    "direction": "straight_turn",
+    "lat": 50.08898463653799,
+    "lon": 5.752618851699357
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0199",
+    "vehicle_type": "Bus",
+    "weight": 3,
+    "timestamp": "2025-05-18T12:16:38Z",
+    "direction": "straight_turn",
+    "lat": 50.089039162030126,
+    "lon": 5.752675419638188
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0001",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-01T08:15:22Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088423,
+    "lon": 5.752101
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0002",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-01T08:32:45Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088912,
+    "lon": 5.752543
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0003",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-01T09:05:11Z",
+    "direction": "straight_turn",
+    "lat": 50.088745,
+    "lon": 5.752311
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0004",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-04-01T10:22:33Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088387,
+    "lon": 5.752156
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0005",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-04-02T11:15:07Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088954,
+    "lon": 5.752601
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0006",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-04-03T14:42:19Z",
+    "direction": "straight_turn",
+    "lat": 50.088712,
+    "lon": 5.752288
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0007",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-04T16:05:41Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088401,
+    "lon": 5.752134
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0008",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-05T09:33:28Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088978,
+    "lon": 5.752634
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0009",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-06T12:47:55Z",
+    "direction": "straight_turn",
+    "lat": 50.088698,
+    "lon": 5.752267
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0010",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-04-07T15:11:03Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088412,
+    "lon": 5.752121
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0011",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-04-08T10:25:37Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088932,
+    "lon": 5.752587
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0012",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-04-09T13:38:49Z",
+    "direction": "straight_turn",
+    "lat": 50.088728,
+    "lon": 5.752301
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0013",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-10T17:02:14Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088396,
+    "lon": 5.752143
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0014",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-11T08:44:26Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088967,
+    "lon": 5.752621
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0015",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-12T11:56:42Z",
+    "direction": "straight_turn",
+    "lat": 50.088705,
+    "lon": 5.752278
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0016",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-04-13T14:19:58Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088418,
+    "lon": 5.752132
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0017",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-04-14T09:33:21Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088945,
+    "lon": 5.752598
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0018",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-04-15T12:46:35Z",
+    "direction": "straight_turn",
+    "lat": 50.088721,
+    "lon": 5.752312
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0019",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-16T16:09:59Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088389,
+    "lon": 5.752154
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0020",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-17T07:52:11Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088958,
+    "lon": 5.752632
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0021",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-18T11:04:27Z",
+    "direction": "straight_turn",
+    "lat": 50.088696,
+    "lon": 5.752289
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0022",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-04-19T14:27:43Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088409,
+    "lon": 5.752143
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0023",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-04-20T09:41:06Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088936,
+    "lon": 5.752609
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0024",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-04-21T12:54:20Z",
+    "direction": "straight_turn",
+    "lat": 50.088712,
+    "lon": 5.752323
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0025",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-22T16:17:44Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088380,
+    "lon": 5.752165
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0026",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-23T08:00:56Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088949,
+    "lon": 5.752643
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0027",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-24T11:13:12Z",
+    "direction": "straight_turn",
+    "lat": 50.088687,
+    "lon": 5.752300
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0028",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-04-25T14:36:28Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088400,
+    "lon": 5.752154
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0029",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-04-26T09:49:51Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088927,
+    "lon": 5.752620
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0030",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-04-27T13:03:05Z",
+    "direction": "straight_turn",
+    "lat": 50.088703,
+    "lon": 5.752334
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0031",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-04-28T16:26:29Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088371,
+    "lon": 5.752176
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0032",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-04-29T08:09:41Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088940,
+    "lon": 5.752654
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0033",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-04-30T11:21:57Z",
+    "direction": "straight_turn",
+    "lat": 50.088678,
+    "lon": 5.752311
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0034",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-01T14:45:13Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088391,
+    "lon": 5.752165
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0035",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-02T09:58:36Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088918,
+    "lon": 5.752631
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0036",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-03T13:11:50Z",
+    "direction": "straight_turn",
+    "lat": 50.088694,
+    "lon": 5.752345
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0037",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-04T16:35:14Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088362,
+    "lon": 5.752187
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0038",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-05T08:18:26Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088931,
+    "lon": 5.752665
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0039",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-06T11:30:42Z",
+    "direction": "straight_turn",
+    "lat": 50.088669,
+    "lon": 5.752322
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0040",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-07T14:53:58Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088382,
+    "lon": 5.752176
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0041",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-08T10:07:21Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088909,
+    "lon": 5.752642
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0042",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-09T13:20:35Z",
+    "direction": "straight_turn",
+    "lat": 50.088685,
+    "lon": 5.752356
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0043",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-10T16:43:59Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088353,
+    "lon": 5.752198
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0044",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-11T08:27:11Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088922,
+    "lon": 5.752676
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0045",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-12T11:39:27Z",
+    "direction": "straight_turn",
+    "lat": 50.088660,
+    "lon": 5.752333
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0046",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-13T15:02:43Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088373,
+    "lon": 5.752187
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0047",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-14T10:16:06Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088900,
+    "lon": 5.752653
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0048",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-15T13:29:20Z",
+    "direction": "straight_turn",
+    "lat": 50.088676,
+    "lon": 5.752367
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0049",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-16T16:52:44Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088344,
+    "lon": 5.752209
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0050",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-17T08:35:56Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088913,
+    "lon": 5.752687
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0051",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:15:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088401,
+    "lon": 5.752134
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0052",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:22:00Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088932,
+    "lon": 5.752587
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0053",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:35:00Z",
+    "direction": "straight_turn",
+    "lat": 50.088712,
+    "lon": 5.752301
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0054",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T14:42:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088396,
+    "lon": 5.752143
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0055",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:50:00Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088967,
+    "lon": 5.752621
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0056",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:56:00Z",
+    "direction": "straight_turn",
+    "lat": 50.088705,
+    "lon": 5.752278
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0057",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:57:30Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088418,
+    "lon": 5.752132
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0058",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:58:45Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088945,
+    "lon": 5.752598
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0059",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-05-18T14:59:20Z",
+    "direction": "straight_turn",
+    "lat": 50.088721,
+    "lon": 5.752312
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0060",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-05-18T15:00:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088389,
+    "lon": 5.752154
+  },
+   {
+    "camera_id": 2,
+    "track_id": "trk_0061",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:15:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088401,
+    "lon": 5.752134
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0062",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:25:00Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088932,
+    "lon": 5.752587
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0063",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-04T16:35:00Z",
+    "direction": "straight_turn",
+    "lat": 50.088712,
+    "lon": 5.752301
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0064",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:45:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088396,
+    "lon": 5.752143
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0065",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:55:00Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088967,
+    "lon": 5.752621
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0066",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:56:30Z",
+    "direction": "straight_turn",
+    "lat": 50.088705,
+    "lon": 5.752278
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0067",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:57:45Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088418,
+    "lon": 5.752132
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0068",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-04T16:58:20Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088945,
+    "lon": 5.752598
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0069",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-04T16:59:10Z",
+    "direction": "straight_turn",
+    "lat": 50.088721,
+    "lon": 5.752312
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_0070",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-04T17:00:00Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088389,
+    "lon": 5.752154
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_night_04",
+    "vehicle_type": "Coupe",
+    "weight": 1,
+    "timestamp": "2025-06-03T22:59:30Z",
+    "direction": "straight_to_turn",
+    "lat": 50.088396,
+    "lon": 5.752143
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_night_05",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-03T23:01:15Z",
+    "direction": "straight_after_turn",
+    "lat": 50.088967,
+    "lon": 5.752621
+  },
+  {
+    "camera_id": 2,
+    "track_id": "trk_night_06",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-03T23:03:45Z",
+    "direction": "straight_turn",
+    "lat": 50.088705,
+    "lon": 5.752278
+  }
+]

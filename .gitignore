@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+*.pyc
+__pycache__/
+
+# IDE specific
+.vscode/
+.idea/
+
+# Other
+*.swp
+*.swo
+*.log
+*.sqlite3

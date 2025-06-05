@@ -1,0 +1,134 @@
+import cv2
+import numpy as np
+from shapely.geometry import Point, Polygon
+from ultralytics import YOLO
+from typing import Dict, List, Optional
+import json
+import os
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+class VideoAnalyzer:
+    def __init__(self):
+        self.model = self._load_model()
+        self.cameras = self._load_cameras()
+        self.polygons = self._load_polygons()
+        self.class_map = {
+            2: 'Sedan', 5: 'Hatchback', 7: 'Crossover',
+            9: 'Truck', 3: 'Station wagon', 1: 'Coupe'
+        }
+
+    def _load_model(self):
+        """Загрузка модели YOLO с повторами"""
+        from ultralytics import YOLO
+        try:
+            model = YOLO("yolov8n.pt")
+            logger.info("Модель YOLO успешно загружена")
+            return model
+        except Exception as e:
+            logger.error(f"Ошибка загрузки модели: {str(e)}")
+            raise
+
+    def _load_cameras(self) -> Dict:
+        """Загрузка данных о камерах"""
+        try:
+            with open('data/cameras.json') as f:
+                cameras = json.load(f)
+                return {cam['id']: cam for cam in cameras}
+        except Exception as e:
+            logger.error(f"Ошибка загрузки cameras.json: {str(e)}")
+            return {}
+
+    def _load_polygons(self) -> Dict:
+        """Загрузка полигонов"""
+        try:
+            with open('data/polygons.geojson') as f:
+                polygons = json.load(f)
+                
+            result = {}
+            for poly in polygons:
+                cam_id = poly['camera_id']
+                if cam_id not in result:
+                    result[cam_id] = []
+                
+                try:
+                    result[cam_id].append({
+                        'polygon': Polygon(poly['geometry']['coordinates'][0]),
+                        'direction': poly['direction']
+                    })
+                except Exception as e:
+                    logger.warning(f"Ошибка обработки полигона: {str(e)}")
+            
+            return result
+        except Exception as e:
+            logger.error(f"Ошибка загрузки polygons.geojson: {str(e)}")
+            return {}
+
+    def analyze_frame(self, frame: np.ndarray, camera_id: int) -> Dict:
+        """Анализ одного кадра"""
+        try:
+            results = self.model(frame)[0]
+            detections = []
+            
+            for box in results.boxes:
+                x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
+                class_id = int(box.cls[0].item())
+                confidence = float(box.conf[0].item())
+                
+                if class_id not in self.class_map:
+                    continue
+                    
+                vehicle_type = self.class_map[class_id]
+                center = Point((x1 + x2) / 2, (y1 + y2) / 2)
+                direction = self._get_direction(center, camera_id)
+                
+                detections.append({
+                    'bbox': [x1, y1, x2 - x1, y2 - y1],
+                    'type': vehicle_type,
+                    'direction': direction,
+                    'confidence': confidence,
+                    'weight': 3 if vehicle_type == 'Truck' else 1
+                })
+            
+            return {
+                'detections': detections,
+                'frame': self._draw_results(frame.copy(), detections)
+            }
+            
+        except Exception as e:
+            logger.error(f"Ошибка анализа кадра: {str(e)}")
+            return {'detections': [], 'frame': frame}
+
+    def _get_direction(self, point: Point, camera_id: int) -> str:
+        """Определение направления движения"""
+        # Сначала проверяем полигоны
+        for zone in self.polygons.get(camera_id, []):
+            if zone['polygon'].contains(point):
+                return zone['direction']
+        
+        # Затем зоны камеры
+        if camera_id in self.cameras:
+            for zone in self.cameras[camera_id].get('zones', []):
+                poly = Polygon(self._normalize_points(zone['points'], (720, 1280)))
+                if poly.contains(point):
+                    return zone['name'].replace('_zone', '')
+        
+        return 'unknown'
+
+    def _normalize_points(self, points: List[List[float]], shape) -> List[List[int]]:
+        """Нормализация координат"""
+        h, w = shape[:2]
+        return [[int(x * w), int(y * h)] for x, y in points]
+
+    def _draw_results(self, frame: np.ndarray, detections: List[Dict]) -> np.ndarray:
+        """Отрисовка результатов на кадре"""
+        for det in detections:
+            x, y, w, h = det['bbox']
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.putText(
+                frame, f"{det['type']} {det['direction']}",
+                (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1
+            )
+        return frame
