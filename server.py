@@ -31,24 +31,26 @@ class VideoProcessor:
         self.processing = False
         self.lock = threading.Lock()
         self.last_frame_time = 0
-        self.frame_skip = 2  # Обрабатываем каждый 3-й кадр
-        self.target_size = (1280, 720)  # Целевой размер кадра
+        self.frame_skip = 2
+        self.target_size = (1280, 720)
+        self.cap = None  # Добавляем ссылку на VideoCapture
 
     def process_video(self, file_path: str, camera_id: int):
         self.processing = True
-        cap = cv2.VideoCapture(file_path)
+        self.cap = cv2.VideoCapture(file_path)  # Сохраняем в поле класса
         
         try:
             frame_count = 0
-            while self.processing and cap.isOpened():
-                ret, frame = cap.read()
-                if not ret:
+            while self.processing and self.cap.isOpened():
+                # Добавляем таймаут для чтения кадра
+                ret, frame = self.cap.read()
+                if not ret or not self.processing:  # Явная проверка флага
                     break
                 
                 frame_count += 1
-                if frame_count % self.frame_skip != 0:  # Пропускаем кадры
+                if frame_count % self.frame_skip != 0:
                     continue
-                
+
                 # Проверка и логирование входного кадра
                 logger.debug(f"Input frame shape: {frame.shape}")
                 if len(frame.shape) != 3 or frame.shape[2] != 3:
@@ -78,11 +80,12 @@ class VideoProcessor:
                 except Exception as e:
                     logger.error(f"Ошибка обработки кадра: {str(e)}")
                     continue
-                    
+                
         except Exception as e:
             logger.error(f"Ошибка в процессе видео: {str(e)}")
         finally:
-            cap.release()
+            if self.cap:
+                self.cap.release()
             if os.path.exists(file_path):
                 os.remove(file_path)
             self.processing = False
@@ -138,6 +141,15 @@ async def get_current_detections():
 @app.get("/cameras")
 async def get_cameras():
     return list(analyzer.cameras.values())
+
+@app.post("/stop_analysis")
+async def stop_analysis():
+    if processor.processing:
+        processor.processing = False
+        if processor.cap:  # Принудительно останавливаем VideoCapture
+            processor.cap.release()
+        logger.info("Обработка видео принудительно остановлена")
+    return {"status": "processing_stopped"}
 
 if __name__ == "__main__":
     import uvicorn
