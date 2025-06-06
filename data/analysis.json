@@ -2246,7 +2246,7 @@
     "weight": 1,
     "timestamp": "2025-04-22T16:17:44Z",
     "direction": "straight_to_turn",
-    "lat": 50.088380,
+    "lat": 50.08838,
     "lon": 5.752165
   },
   {
@@ -2267,7 +2267,7 @@
     "timestamp": "2025-04-24T11:13:12Z",
     "direction": "straight_turn",
     "lat": 50.088687,
-    "lon": 5.752300
+    "lon": 5.7523
   },
   {
     "camera_id": 2,
@@ -2276,7 +2276,7 @@
     "weight": 1,
     "timestamp": "2025-04-25T14:36:28Z",
     "direction": "straight_to_turn",
-    "lat": 50.088400,
+    "lat": 50.0884,
     "lon": 5.752154
   },
   {
@@ -2287,7 +2287,7 @@
     "timestamp": "2025-04-26T09:49:51Z",
     "direction": "straight_after_turn",
     "lat": 50.088927,
-    "lon": 5.752620
+    "lon": 5.75262
   },
   {
     "camera_id": 2,
@@ -2316,7 +2316,7 @@
     "weight": 3,
     "timestamp": "2025-04-29T08:09:41Z",
     "direction": "straight_after_turn",
-    "lat": 50.088940,
+    "lat": 50.08894,
     "lon": 5.752654
   },
   {
@@ -2446,7 +2446,7 @@
     "weight": 1,
     "timestamp": "2025-05-12T11:39:27Z",
     "direction": "straight_turn",
-    "lat": 50.088660,
+    "lat": 50.08866,
     "lon": 5.752333
   },
   {
@@ -2466,7 +2466,7 @@
     "weight": 1,
     "timestamp": "2025-05-14T10:16:06Z",
     "direction": "straight_after_turn",
-    "lat": 50.088900,
+    "lat": 50.0889,
     "lon": 5.752653
   },
   {
@@ -2599,7 +2599,7 @@
     "lat": 50.088389,
     "lon": 5.752154
   },
-   {
+  {
     "camera_id": 2,
     "track_id": "trk_0061",
     "vehicle_type": "Sedan",
@@ -2728,5 +2728,6077 @@
     "direction": "straight_turn",
     "lat": 50.088705,
     "lon": 5.752278
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_273",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.083955+00:00",
+    "direction": "westbound",
+    "bbox": [
+      683,
+      286,
+      34,
+      33
+    ],
+    "confidence": 0.6914,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_274",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.303546+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      285,
+      33,
+      32
+    ],
+    "confidence": 0.8077,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_275",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.512368+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      283,
+      33,
+      33
+    ],
+    "confidence": 0.7788,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_276",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.514778+00:00",
+    "direction": "westbound",
+    "bbox": [
+      1006,
+      625,
+      115,
+      95
+    ],
+    "confidence": 0.506,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_277",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.706294+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      283,
+      31,
+      31
+    ],
+    "confidence": 0.7364,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_278",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.708761+00:00",
+    "direction": "westbound",
+    "bbox": [
+      977,
+      597,
+      188,
+      123
+    ],
+    "confidence": 0.5135,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_279",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:15.916342+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      282,
+      31,
+      30
+    ],
+    "confidence": 0.7644,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_280",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.118311+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      282,
+      30,
+      28
+    ],
+    "confidence": 0.7077,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_281",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.312064+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      282,
+      29,
+      27
+    ],
+    "confidence": 0.7186,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_282",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.505378+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      281,
+      27,
+      28
+    ],
+    "confidence": 0.6938,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_283",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:16.508713+00:00",
+    "direction": "westbound",
+    "bbox": [
+      889,
+      498,
+      120,
+      89
+    ],
+    "confidence": 0.5421,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_284",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.696439+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      280,
+      29,
+      27
+    ],
+    "confidence": 0.6308,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_285",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.698965+00:00",
+    "direction": "westbound",
+    "bbox": [
+      883,
+      477,
+      100,
+      89
+    ],
+    "confidence": 0.5866,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_286",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.887434+00:00",
+    "direction": "westbound",
+    "bbox": [
+      868,
+      465,
+      96,
+      83
+    ],
+    "confidence": 0.6527,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_287",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:16.889924+00:00",
+    "direction": "westbound",
+    "bbox": [
+      864,
+      465,
+      96,
+      80
+    ],
+    "confidence": 0.6321,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_288",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:16.892433+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      280,
+      27,
+      26
+    ],
+    "confidence": 0.5691,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_289",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.080487+00:00",
+    "direction": "westbound",
+    "bbox": [
+      853,
+      452,
+      94,
+      75
+    ],
+    "confidence": 0.6168,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_290",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:17.083373+00:00",
+    "direction": "westbound",
+    "bbox": [
+      851,
+      453,
+      90,
+      72
+    ],
+    "confidence": 0.5997,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_291",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.275402+00:00",
+    "direction": "westbound",
+    "bbox": [
+      841,
+      441,
+      87,
+      69
+    ],
+    "confidence": 0.6502,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_292",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.278112+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      278,
+      25,
+      26
+    ],
+    "confidence": 0.5313,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_293",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.473479+00:00",
+    "direction": "westbound",
+    "bbox": [
+      829,
+      430,
+      82,
+      64
+    ],
+    "confidence": 0.6411,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_294",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.476485+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      278,
+      28,
+      24
+    ],
+    "confidence": 0.578,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_295",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.683542+00:00",
+    "direction": "westbound",
+    "bbox": [
+      819,
+      421,
+      79,
+      60
+    ],
+    "confidence": 0.6921,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_296",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.686290+00:00",
+    "direction": "westbound",
+    "bbox": [
+      681,
+      278,
+      27,
+      23
+    ],
+    "confidence": 0.5468,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_297",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.908184+00:00",
+    "direction": "westbound",
+    "bbox": [
+      814,
+      415,
+      71,
+      54
+    ],
+    "confidence": 0.6648,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_298",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:17.910856+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      277,
+      25,
+      23
+    ],
+    "confidence": 0.5558,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_299",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.110838+00:00",
+    "direction": "westbound",
+    "bbox": [
+      806,
+      404,
+      69,
+      58
+    ],
+    "confidence": 0.5727,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_300",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.113630+00:00",
+    "direction": "westbound",
+    "bbox": [
+      682,
+      277,
+      23,
+      23
+    ],
+    "confidence": 0.5112,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_301",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.307687+00:00",
+    "direction": "westbound",
+    "bbox": [
+      798,
+      398,
+      69,
+      53
+    ],
+    "confidence": 0.6485,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_302",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.497939+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      516,
+      317,
+      43,
+      42
+    ],
+    "confidence": 0.5105,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_303",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.500603+00:00",
+    "direction": "westbound",
+    "bbox": [
+      793,
+      393,
+      66,
+      47
+    ],
+    "confidence": 0.5069,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_304",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.690389+00:00",
+    "direction": "westbound",
+    "bbox": [
+      788,
+      386,
+      63,
+      47
+    ],
+    "confidence": 0.7614,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_305",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:18.879089+00:00",
+    "direction": "westbound",
+    "bbox": [
+      782,
+      380,
+      61,
+      45
+    ],
+    "confidence": 0.7174,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_306",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:19.073984+00:00",
+    "direction": "westbound",
+    "bbox": [
+      776,
+      373,
+      62,
+      47
+    ],
+    "confidence": 0.6588,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_307",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:19.273030+00:00",
+    "direction": "westbound",
+    "bbox": [
+      773,
+      369,
+      58,
+      44
+    ],
+    "confidence": 0.5848,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_308",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:19.915475+00:00",
+    "direction": "westbound",
+    "bbox": [
+      762,
+      358,
+      57,
+      38
+    ],
+    "confidence": 0.6288,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_309",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:20.125237+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      478,
+      337,
+      56,
+      53
+    ],
+    "confidence": 0.5487,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_310",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:20.323676+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      472,
+      340,
+      59,
+      56
+    ],
+    "confidence": 0.5932,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_311",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:20.327018+00:00",
+    "direction": "westbound",
+    "bbox": [
+      756,
+      349,
+      55,
+      39
+    ],
+    "confidence": 0.5398,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_312",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:20.750981+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      457,
+      344,
+      67,
+      64
+    ],
+    "confidence": 0.5041,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_313",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:21.006766+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      451,
+      352,
+      66,
+      61
+    ],
+    "confidence": 0.5881,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_314",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:21.208807+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      443,
+      355,
+      65,
+      65
+    ],
+    "confidence": 0.5026,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_315",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:21.460656+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      435,
+      359,
+      71,
+      70
+    ],
+    "confidence": 0.6232,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_316",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:21.668767+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      428,
+      362,
+      69,
+      75
+    ],
+    "confidence": 0.7684,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_317",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:21.869078+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      417,
+      371,
+      73,
+      73
+    ],
+    "confidence": 0.6606,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_318",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:22.068393+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      407,
+      375,
+      76,
+      80
+    ],
+    "confidence": 0.6483,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_319",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:22.268398+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      395,
+      383,
+      81,
+      82
+    ],
+    "confidence": 0.6103,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_320",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:22.459975+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      383,
+      388,
+      83,
+      90
+    ],
+    "confidence": 0.7948,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_321",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.463880+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      476,
+      329,
+      50,
+      44
+    ],
+    "confidence": 0.6658,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_322",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.466994+00:00",
+    "direction": "westbound",
+    "bbox": [
+      825,
+      625,
+      172,
+      95
+    ],
+    "confidence": 0.5772,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_323",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.471084+00:00",
+    "direction": "westbound",
+    "bbox": [
+      734,
+      322,
+      38,
+      30
+    ],
+    "confidence": 0.5747,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_324",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.683078+00:00",
+    "direction": "westbound",
+    "bbox": [
+      808,
+      589,
+      163,
+      131
+    ],
+    "confidence": 0.886,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_325",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:22.685925+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      365,
+      398,
+      93,
+      89
+    ],
+    "confidence": 0.7909,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_326",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.689125+00:00",
+    "direction": "westbound",
+    "bbox": [
+      733,
+      320,
+      38,
+      29
+    ],
+    "confidence": 0.6111,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_327",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.889971+00:00",
+    "direction": "westbound",
+    "bbox": [
+      792,
+      552,
+      142,
+      126
+    ],
+    "confidence": 0.8627,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_328",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:22.893479+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      349,
+      401,
+      100,
+      105
+    ],
+    "confidence": 0.7387,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_329",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:22.896677+00:00",
+    "direction": "westbound",
+    "bbox": [
+      732,
+      319,
+      34,
+      28
+    ],
+    "confidence": 0.5061,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_330",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:23.102948+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      334,
+      417,
+      101,
+      101
+    ],
+    "confidence": 0.7124,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_331",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:23.106360+00:00",
+    "direction": "westbound",
+    "bbox": [
+      776,
+      525,
+      130,
+      112
+    ],
+    "confidence": 0.6133,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_332",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:23.109527+00:00",
+    "direction": "westbound",
+    "bbox": [
+      731,
+      316,
+      35,
+      28
+    ],
+    "confidence": 0.5542,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_333",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:23.353282+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      312,
+      427,
+      110,
+      113
+    ],
+    "confidence": 0.8217,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_334",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:23.356220+00:00",
+    "direction": "westbound",
+    "bbox": [
+      765,
+      502,
+      115,
+      98
+    ],
+    "confidence": 0.7398,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_335",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:23.568289+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      289,
+      439,
+      119,
+      121
+    ],
+    "confidence": 0.7499,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_336",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:23.571388+00:00",
+    "direction": "westbound",
+    "bbox": [
+      729,
+      313,
+      32,
+      27
+    ],
+    "confidence": 0.591,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_337",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:23.575158+00:00",
+    "direction": "westbound",
+    "bbox": [
+      756,
+      479,
+      108,
+      92
+    ],
+    "confidence": 0.5351,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_338",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:23.796030+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      263,
+      453,
+      130,
+      134
+    ],
+    "confidence": 0.529,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_339",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:24.000483+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      227,
+      467,
+      149,
+      154
+    ],
+    "confidence": 0.6447,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_340",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.003846+00:00",
+    "direction": "westbound",
+    "bbox": [
+      740,
+      449,
+      88,
+      74
+    ],
+    "confidence": 0.608,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_341",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.208160+00:00",
+    "direction": "westbound",
+    "bbox": [
+      725,
+      307,
+      32,
+      26
+    ],
+    "confidence": 0.5382,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_342",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.211275+00:00",
+    "direction": "westbound",
+    "bbox": [
+      732,
+      435,
+      83,
+      70
+    ],
+    "confidence": 0.5362,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_343",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.412957+00:00",
+    "direction": "westbound",
+    "bbox": [
+      725,
+      422,
+      81,
+      66
+    ],
+    "confidence": 0.664,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_344",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:24.416032+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      146,
+      504,
+      185,
+      198
+    ],
+    "confidence": 0.5908,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_345",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.618864+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      89,
+      528,
+      216,
+      192
+    ],
+    "confidence": 0.8093,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_346",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:24.856776+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      30,
+      552,
+      241,
+      168
+    ],
+    "confidence": 0.6714,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_347",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:24.859898+00:00",
+    "direction": "westbound",
+    "bbox": [
+      717,
+      403,
+      71,
+      58
+    ],
+    "confidence": 0.5102,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_348",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:25.053128+00:00",
+    "direction": "westbound",
+    "bbox": [
+      712,
+      395,
+      69,
+      55
+    ],
+    "confidence": 0.6936,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_349",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:25.056234+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      0,
+      588,
+      229,
+      132
+    ],
+    "confidence": 0.6321,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_350",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:25.255089+00:00",
+    "direction": "westbound",
+    "bbox": [
+      707,
+      387,
+      73,
+      53
+    ],
+    "confidence": 0.6251,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_351",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:25.459177+00:00",
+    "direction": "westbound",
+    "bbox": [
+      705,
+      378,
+      65,
+      52
+    ],
+    "confidence": 0.7421,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_352",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:25.663735+00:00",
+    "direction": "westbound",
+    "bbox": [
+      703,
+      373,
+      61,
+      50
+    ],
+    "confidence": 0.8366,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_353",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:25.666911+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      363,
+      385,
+      80,
+      80
+    ],
+    "confidence": 0.6385,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_354",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:25.870863+00:00",
+    "direction": "westbound",
+    "bbox": [
+      700,
+      369,
+      60,
+      46
+    ],
+    "confidence": 0.7115,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_355",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:25.874104+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      353,
+      393,
+      81,
+      82
+    ],
+    "confidence": 0.644,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_356",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:26.084784+00:00",
+    "direction": "westbound",
+    "bbox": [
+      699,
+      363,
+      61,
+      45
+    ],
+    "confidence": 0.8194,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_357",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:26.088192+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      338,
+      398,
+      85,
+      90
+    ],
+    "confidence": 0.657,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_358",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:26.294692+00:00",
+    "direction": "westbound",
+    "bbox": [
+      697,
+      356,
+      57,
+      45
+    ],
+    "confidence": 0.8871,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_359",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:26.298372+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      321,
+      409,
+      93,
+      91
+    ],
+    "confidence": 0.5199,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_360",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:26.499735+00:00",
+    "direction": "westbound",
+    "bbox": [
+      695,
+      351,
+      54,
+      44
+    ],
+    "confidence": 0.8688,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_361",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:26.503479+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      303,
+      417,
+      101,
+      97
+    ],
+    "confidence": 0.7365,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_362",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:26.701633+00:00",
+    "direction": "westbound",
+    "bbox": [
+      695,
+      349,
+      49,
+      40
+    ],
+    "confidence": 0.7907,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_363",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:26.705068+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      284,
+      423,
+      107,
+      108
+    ],
+    "confidence": 0.6674,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_364",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:26.899913+00:00",
+    "direction": "westbound",
+    "bbox": [
+      694,
+      345,
+      47,
+      39
+    ],
+    "confidence": 0.8378,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_365",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:26.903204+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      263,
+      433,
+      114,
+      117
+    ],
+    "confidence": 0.6644,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_366",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:27.171715+00:00",
+    "direction": "westbound",
+    "bbox": [
+      694,
+      341,
+      45,
+      37
+    ],
+    "confidence": 0.8711,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_367",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:27.387800+00:00",
+    "direction": "westbound",
+    "bbox": [
+      692,
+      336,
+      47,
+      38
+    ],
+    "confidence": 0.7952,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_368",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:27.391356+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      210,
+      463,
+      133,
+      130
+    ],
+    "confidence": 0.5677,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_369",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:27.620892+00:00",
+    "direction": "westbound",
+    "bbox": [
+      691,
+      334,
+      41,
+      34
+    ],
+    "confidence": 0.7556,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_370",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:27.624288+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      177,
+      475,
+      147,
+      146
+    ],
+    "confidence": 0.5638,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_371",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:27.628610+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      469,
+      331,
+      50,
+      48
+    ],
+    "confidence": 0.5228,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_372",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:27.854542+00:00",
+    "direction": "westbound",
+    "bbox": [
+      690,
+      331,
+      41,
+      34
+    ],
+    "confidence": 0.6901,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_373",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:27.858111+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      138,
+      491,
+      170,
+      164
+    ],
+    "confidence": 0.5909,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_374",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:27.862740+00:00",
+    "direction": "westbound",
+    "bbox": [
+      994,
+      602,
+      208,
+      118
+    ],
+    "confidence": 0.5188,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_375",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.119902+00:00",
+    "direction": "westbound",
+    "bbox": [
+      690,
+      328,
+      39,
+      32
+    ],
+    "confidence": 0.6232,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_376",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:28.124029+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      93,
+      513,
+      190,
+      178
+    ],
+    "confidence": 0.5853,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_377",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.377979+00:00",
+    "direction": "westbound",
+    "bbox": [
+      689,
+      324,
+      41,
+      33
+    ],
+    "confidence": 0.7556,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_378",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:28.382462+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      34,
+      531,
+      216,
+      189
+    ],
+    "confidence": 0.5493,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_379",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:28.386490+00:00",
+    "direction": "westbound",
+    "bbox": [
+      949,
+      543,
+      151,
+      119
+    ],
+    "confidence": 0.5129,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_380",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.391071+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      452,
+      339,
+      55,
+      52
+    ],
+    "confidence": 0.5005,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_381",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.636949+00:00",
+    "direction": "westbound",
+    "bbox": [
+      687,
+      322,
+      42,
+      32
+    ],
+    "confidence": 0.7805,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_382",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:28.641510+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      0,
+      555,
+      220,
+      165
+    ],
+    "confidence": 0.6163,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_383",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.645942+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      578,
+      307,
+      34,
+      26
+    ],
+    "confidence": 0.5965,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_384",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.921486+00:00",
+    "direction": "westbound",
+    "bbox": [
+      687,
+      319,
+      39,
+      31
+    ],
+    "confidence": 0.7197,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_385",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:28.925476+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      437,
+      343,
+      63,
+      59
+    ],
+    "confidence": 0.5551,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_386",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.154291+00:00",
+    "direction": "westbound",
+    "bbox": [
+      685,
+      316,
+      40,
+      32
+    ],
+    "confidence": 0.7139,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_387",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.158324+00:00",
+    "direction": "westbound",
+    "bbox": [
+      891,
+      476,
+      101,
+      89
+    ],
+    "confidence": 0.5898,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_388",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:29.162069+00:00",
+    "direction": "westbound",
+    "bbox": [
+      884,
+      475,
+      110,
+      90
+    ],
+    "confidence": 0.5878,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_389",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.166001+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      573,
+      309,
+      35,
+      29
+    ],
+    "confidence": 0.5546,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_390",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.385200+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      422,
+      353,
+      69,
+      60
+    ],
+    "confidence": 0.809,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_391",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:29.389115+00:00",
+    "direction": "westbound",
+    "bbox": [
+      868,
+      461,
+      102,
+      82
+    ],
+    "confidence": 0.7785,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_392",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.393385+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      571,
+      313,
+      36,
+      27
+    ],
+    "confidence": 0.6716,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_393",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.396936+00:00",
+    "direction": "westbound",
+    "bbox": [
+      684,
+      315,
+      39,
+      29
+    ],
+    "confidence": 0.6067,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_394",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.651827+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      568,
+      315,
+      38,
+      27
+    ],
+    "confidence": 0.5924,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_395",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.656765+00:00",
+    "direction": "westbound",
+    "bbox": [
+      685,
+      313,
+      35,
+      27
+    ],
+    "confidence": 0.5366,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_396",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:29.897016+00:00",
+    "direction": "westbound",
+    "bbox": [
+      845,
+      436,
+      86,
+      69
+    ],
+    "confidence": 0.6115,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_397",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:29.901447+00:00",
+    "direction": "westbound",
+    "bbox": [
+      685,
+      312,
+      34,
+      27
+    ],
+    "confidence": 0.5188,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_398",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:29.905546+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      408,
+      360,
+      71,
+      67
+    ],
+    "confidence": 0.5149,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_399",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.205514+00:00",
+    "direction": "westbound",
+    "bbox": [
+      684,
+      308,
+      35,
+      28
+    ],
+    "confidence": 0.5367,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_400",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.210047+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      563,
+      317,
+      37,
+      31
+    ],
+    "confidence": 0.5333,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_401",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:30.214835+00:00",
+    "direction": "westbound",
+    "bbox": [
+      833,
+      426,
+      81,
+      65
+    ],
+    "confidence": 0.529,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_402",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.219835+00:00",
+    "direction": "westbound",
+    "bbox": [
+      833,
+      426,
+      81,
+      64
+    ],
+    "confidence": 0.5126,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_403",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.474986+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      560,
+      320,
+      39,
+      31
+    ],
+    "confidence": 0.7444,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_404",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.479583+00:00",
+    "direction": "westbound",
+    "bbox": [
+      825,
+      417,
+      74,
+      59
+    ],
+    "confidence": 0.6445,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_405",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:30.484504+00:00",
+    "direction": "westbound",
+    "bbox": [
+      823,
+      418,
+      77,
+      58
+    ],
+    "confidence": 0.5424,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_406",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.488854+00:00",
+    "direction": "westbound",
+    "bbox": [
+      683,
+      307,
+      36,
+      26
+    ],
+    "confidence": 0.5415,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_407",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.723681+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      556,
+      322,
+      43,
+      32
+    ],
+    "confidence": 0.8208,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_408",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.728006+00:00",
+    "direction": "westbound",
+    "bbox": [
+      816,
+      408,
+      70,
+      58
+    ],
+    "confidence": 0.6047,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_409",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:30.957493+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      554,
+      323,
+      42,
+      34
+    ],
+    "confidence": 0.7532,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_410",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:30.961855+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      368,
+      378,
+      85,
+      82
+    ],
+    "confidence": 0.5408,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_411",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.187744+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      550,
+      328,
+      42,
+      33
+    ],
+    "confidence": 0.8388,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_412",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.191944+00:00",
+    "direction": "westbound",
+    "bbox": [
+      800,
+      393,
+      66,
+      51
+    ],
+    "confidence": 0.5737,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_413",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:31.196494+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      355,
+      384,
+      88,
+      86
+    ],
+    "confidence": 0.5423,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_414",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.460447+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      547,
+      331,
+      44,
+      33
+    ],
+    "confidence": 0.8059,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_415",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:31.467128+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      346,
+      392,
+      89,
+      88
+    ],
+    "confidence": 0.603,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_416",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.717140+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      543,
+      333,
+      43,
+      35
+    ],
+    "confidence": 0.8476,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_417",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:31.721973+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      328,
+      400,
+      98,
+      95
+    ],
+    "confidence": 0.7808,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_418",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.726893+00:00",
+    "direction": "westbound",
+    "bbox": [
+      788,
+      380,
+      63,
+      48
+    ],
+    "confidence": 0.6451,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_419",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:31.967162+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      539,
+      336,
+      48,
+      36
+    ],
+    "confidence": 0.7631,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_420",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:31.971850+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      312,
+      406,
+      107,
+      101
+    ],
+    "confidence": 0.6908,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_421",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:32.211955+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      535,
+      340,
+      47,
+      38
+    ],
+    "confidence": 0.8366,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_422",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:32.216706+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      295,
+      411,
+      110,
+      114
+    ],
+    "confidence": 0.6584,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_423",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:32.468732+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      530,
+      345,
+      50,
+      36
+    ],
+    "confidence": 0.7818,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_424",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:32.473991+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      277,
+      426,
+      114,
+      112
+    ],
+    "confidence": 0.6454,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_425",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:32.764305+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      525,
+      345,
+      52,
+      43
+    ],
+    "confidence": 0.8772,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_426",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:32.770530+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      251,
+      431,
+      128,
+      128
+    ],
+    "confidence": 0.6375,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_427",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:32.994938+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      518,
+      346,
+      55,
+      46
+    ],
+    "confidence": 0.8471,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_428",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:32.999889+00:00",
+    "direction": "westbound",
+    "bbox": [
+      766,
+      355,
+      51,
+      41
+    ],
+    "confidence": 0.5131,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_429",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:33.226916+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      514,
+      353,
+      56,
+      46
+    ],
+    "confidence": 0.8755,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_430",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:33.232259+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      198,
+      457,
+      147,
+      152
+    ],
+    "confidence": 0.5933,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_431",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:33.450742+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      508,
+      358,
+      58,
+      46
+    ],
+    "confidence": 0.8737,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_432",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:33.680783+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      502,
+      363,
+      60,
+      49
+    ],
+    "confidence": 0.7451,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_433",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:33.687071+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      126,
+      487,
+      183,
+      187
+    ],
+    "confidence": 0.6544,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_434",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:33.936392+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      494,
+      367,
+      63,
+      53
+    ],
+    "confidence": 0.8382,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_435",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:33.941143+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      64,
+      506,
+      222,
+      211
+    ],
+    "confidence": 0.5023,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_436",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.237005+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      490,
+      372,
+      64,
+      57
+    ],
+    "confidence": 0.8849,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_437",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.242037+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      11,
+      532,
+      250,
+      188
+    ],
+    "confidence": 0.5971,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_438",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:34.247516+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      12,
+      534,
+      244,
+      186
+    ],
+    "confidence": 0.529,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_439",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.495482+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      481,
+      380,
+      67,
+      57
+    ],
+    "confidence": 0.9273,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_440",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:34.500872+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      0,
+      556,
+      225,
+      164
+    ],
+    "confidence": 0.7216,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_441",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.742093+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      474,
+      387,
+      69,
+      60
+    ],
+    "confidence": 0.8882,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_442",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:34.747986+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      0,
+      592,
+      182,
+      128
+    ],
+    "confidence": 0.5709,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_443",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.753968+00:00",
+    "direction": "westbound",
+    "bbox": [
+      747,
+      332,
+      40,
+      32
+    ],
+    "confidence": 0.517,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_444",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:34.987176+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      464,
+      394,
+      75,
+      64
+    ],
+    "confidence": 0.8772,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_445",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:35.218964+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      452,
+      397,
+      78,
+      73
+    ],
+    "confidence": 0.7135,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_446",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:35.494765+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      441,
+      411,
+      83,
+      72
+    ],
+    "confidence": 0.7852,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_447",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:35.499190+00:00",
+    "direction": "westbound",
+    "bbox": [
+      740,
+      325,
+      39,
+      30
+    ],
+    "confidence": 0.5668,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_448",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:35.730541+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      430,
+      421,
+      87,
+      79
+    ],
+    "confidence": 0.8048,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_449",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:35.957530+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      418,
+      434,
+      93,
+      82
+    ],
+    "confidence": 0.8363,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_450",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:36.165449+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      404,
+      444,
+      97,
+      93
+    ],
+    "confidence": 0.8409,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_451",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:36.373485+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      386,
+      459,
+      106,
+      99
+    ],
+    "confidence": 0.8249,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_452",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:36.378209+00:00",
+    "direction": "westbound",
+    "bbox": [
+      734,
+      315,
+      33,
+      28
+    ],
+    "confidence": 0.5183,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_453",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:36.591391+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      365,
+      474,
+      116,
+      114
+    ],
+    "confidence": 0.5074,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_454",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:36.800475+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      341,
+      492,
+      126,
+      128
+    ],
+    "confidence": 0.6056,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_455",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:37.026120+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      311,
+      515,
+      144,
+      146
+    ],
+    "confidence": 0.7134,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_456",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:37.229672+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      277,
+      541,
+      160,
+      170
+    ],
+    "confidence": 0.5934,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_457",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:37.463957+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      237,
+      576,
+      180,
+      144
+    ],
+    "confidence": 0.6017,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_458",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:38.096591+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      527,
+      301,
+      37,
+      37
+    ],
+    "confidence": 0.5715,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_459",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:38.385759+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      525,
+      302,
+      38,
+      39
+    ],
+    "confidence": 0.5955,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_460",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:39.243333+00:00",
+    "direction": "westbound",
+    "bbox": [
+      721,
+      297,
+      24,
+      20
+    ],
+    "confidence": 0.5115,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_461",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:39.910030+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      504,
+      313,
+      44,
+      43
+    ],
+    "confidence": 0.5039,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_462",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:40.115815+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      500,
+      316,
+      46,
+      42
+    ],
+    "confidence": 0.6005,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_463",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:40.577611+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      492,
+      319,
+      47,
+      44
+    ],
+    "confidence": 0.73,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_464",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:40.955623+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      488,
+      320,
+      50,
+      48
+    ],
+    "confidence": 0.667,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_465",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:40.961436+00:00",
+    "direction": "westbound",
+    "bbox": [
+      715,
+      290,
+      23,
+      18
+    ],
+    "confidence": 0.508,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_466",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:41.219130+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      484,
+      322,
+      51,
+      48
+    ],
+    "confidence": 0.7644,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_467",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:41.444495+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      479,
+      324,
+      52,
+      50
+    ],
+    "confidence": 0.7922,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_468",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:41.697993+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      474,
+      328,
+      54,
+      49
+    ],
+    "confidence": 0.8374,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_469",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:41.913806+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      469,
+      330,
+      55,
+      51
+    ],
+    "confidence": 0.756,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_470",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.125154+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      463,
+      332,
+      57,
+      53
+    ],
+    "confidence": 0.8721,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_471",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.340275+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      459,
+      335,
+      55,
+      53
+    ],
+    "confidence": 0.8472,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_472",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.345601+00:00",
+    "direction": "westbound",
+    "bbox": [
+      961,
+      566,
+      245,
+      154
+    ],
+    "confidence": 0.5217,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_473",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.556202+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      454,
+      338,
+      58,
+      54
+    ],
+    "confidence": 0.8497,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_474",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.561373+00:00",
+    "direction": "westbound",
+    "bbox": [
+      795,
+      630,
+      169,
+      90
+    ],
+    "confidence": 0.7744,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_475",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.759721+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      446,
+      340,
+      63,
+      57
+    ],
+    "confidence": 0.7947,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_476",
+    "vehicle_type": "Sedan",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:42.765218+00:00",
+    "direction": "westbound",
+    "bbox": [
+      779,
+      592,
+      159,
+      128
+    ],
+    "confidence": 0.5548,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_477",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.029733+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      438,
+      343,
+      67,
+      61
+    ],
+    "confidence": 0.8872,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_478",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.276578+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      433,
+      346,
+      67,
+      64
+    ],
+    "confidence": 0.8883,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_479",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.282268+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      523,
+      312,
+      36,
+      30
+    ],
+    "confidence": 0.5593,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_480",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.494751+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      425,
+      351,
+      75,
+      63
+    ],
+    "confidence": 0.8342,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_481",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.695464+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      417,
+      355,
+      75,
+      66
+    ],
+    "confidence": 0.8199,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_482",
+    "vehicle_type": "Crossover",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.700671+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      562,
+      312,
+      43,
+      38
+    ],
+    "confidence": 0.6629,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_483",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.706430+00:00",
+    "direction": "westbound",
+    "bbox": [
+      743,
+      498,
+      114,
+      103
+    ],
+    "confidence": 0.5164,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_484",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:43.911830+00:00",
+    "direction": "westbound",
+    "bbox": [
+      813,
+      632,
+      175,
+      88
+    ],
+    "confidence": 0.8041,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_485",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.916617+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      409,
+      360,
+      73,
+      67
+    ],
+    "confidence": 0.7207,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_486",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:43.921619+00:00",
+    "direction": "westbound",
+    "bbox": [
+      857,
+      451,
+      118,
+      94
+    ],
+    "confidence": 0.5823,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_487",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:43.926296+00:00",
+    "direction": "westbound",
+    "bbox": [
+      739,
+      484,
+      100,
+      90
+    ],
+    "confidence": 0.5351,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_488",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.152160+00:00",
+    "direction": "westbound",
+    "bbox": [
+      797,
+      590,
+      163,
+      130
+    ],
+    "confidence": 0.7396,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_489",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.159035+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      401,
+      364,
+      77,
+      71
+    ],
+    "confidence": 0.7342,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_490",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.164138+00:00",
+    "direction": "westbound",
+    "bbox": [
+      732,
+      467,
+      94,
+      87
+    ],
+    "confidence": 0.6008,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_491",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.168872+00:00",
+    "direction": "westbound",
+    "bbox": [
+      842,
+      436,
+      118,
+      97
+    ],
+    "confidence": 0.5953,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_492",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.376233+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      391,
+      370,
+      79,
+      71
+    ],
+    "confidence": 0.7932,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_493",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.382192+00:00",
+    "direction": "westbound",
+    "bbox": [
+      782,
+      561,
+      153,
+      148
+    ],
+    "confidence": 0.7262,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_494",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.387600+00:00",
+    "direction": "westbound",
+    "bbox": [
+      835,
+      429,
+      112,
+      87
+    ],
+    "confidence": 0.6995,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_495",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.392814+00:00",
+    "direction": "westbound",
+    "bbox": [
+      726,
+      454,
+      91,
+      80
+    ],
+    "confidence": 0.6436,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_496",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.593085+00:00",
+    "direction": "westbound",
+    "bbox": [
+      772,
+      535,
+      140,
+      130
+    ],
+    "confidence": 0.7785,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_497",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.598728+00:00",
+    "direction": "westbound",
+    "bbox": [
+      721,
+      442,
+      84,
+      76
+    ],
+    "confidence": 0.6449,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_498",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.603573+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      381,
+      373,
+      85,
+      79
+    ],
+    "confidence": 0.6224,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_499",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.608354+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      380,
+      374,
+      86,
+      76
+    ],
+    "confidence": 0.5268,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_500",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.613103+00:00",
+    "direction": "westbound",
+    "bbox": [
+      825,
+      423,
+      121,
+      108
+    ],
+    "confidence": 0.5189,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_501",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:44.813741+00:00",
+    "direction": "westbound",
+    "bbox": [
+      819,
+      409,
+      110,
+      108
+    ],
+    "confidence": 0.7576,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_502",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.819151+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      369,
+      379,
+      88,
+      81
+    ],
+    "confidence": 0.7528,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_503",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.824280+00:00",
+    "direction": "westbound",
+    "bbox": [
+      767,
+      514,
+      119,
+      114
+    ],
+    "confidence": 0.7326,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_504",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:44.829189+00:00",
+    "direction": "westbound",
+    "bbox": [
+      715,
+      429,
+      83,
+      74
+    ],
+    "confidence": 0.5174,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_505",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.027976+00:00",
+    "direction": "westbound",
+    "bbox": [
+      809,
+      401,
+      101,
+      85
+    ],
+    "confidence": 0.829,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_506",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.032949+00:00",
+    "direction": "westbound",
+    "bbox": [
+      757,
+      494,
+      110,
+      102
+    ],
+    "confidence": 0.7845,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_507",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.037862+00:00",
+    "direction": "westbound",
+    "bbox": [
+      712,
+      421,
+      76,
+      68
+    ],
+    "confidence": 0.6373,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_508",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.042662+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      359,
+      384,
+      90,
+      87
+    ],
+    "confidence": 0.57,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_509",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.243563+00:00",
+    "direction": "westbound",
+    "bbox": [
+      802,
+      394,
+      102,
+      94
+    ],
+    "confidence": 0.8075,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_510",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.248652+00:00",
+    "direction": "westbound",
+    "bbox": [
+      749,
+      477,
+      106,
+      92
+    ],
+    "confidence": 0.752,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_511",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.254477+00:00",
+    "direction": "westbound",
+    "bbox": [
+      707,
+      412,
+      79,
+      65
+    ],
+    "confidence": 0.576,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_512",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.260295+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      494,
+      327,
+      43,
+      37
+    ],
+    "confidence": 0.5618,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_513",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.452173+00:00",
+    "direction": "westbound",
+    "bbox": [
+      797,
+      389,
+      93,
+      88
+    ],
+    "confidence": 0.761,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_514",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.460118+00:00",
+    "direction": "westbound",
+    "bbox": [
+      744,
+      462,
+      97,
+      88
+    ],
+    "confidence": 0.7265,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_515",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.465489+00:00",
+    "direction": "westbound",
+    "bbox": [
+      705,
+      404,
+      73,
+      61
+    ],
+    "confidence": 0.6505,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_516",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.470810+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      537,
+      329,
+      51,
+      49
+    ],
+    "confidence": 0.5475,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_517",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.476842+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      329,
+      397,
+      102,
+      95
+    ],
+    "confidence": 0.522,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_518",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.685543+00:00",
+    "direction": "westbound",
+    "bbox": [
+      793,
+      382,
+      88,
+      83
+    ],
+    "confidence": 0.7712,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_519",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.690722+00:00",
+    "direction": "westbound",
+    "bbox": [
+      739,
+      451,
+      89,
+      81
+    ],
+    "confidence": 0.7214,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_520",
+    "vehicle_type": "Hatchback",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.696349+00:00",
+    "direction": "westbound",
+    "bbox": [
+      704,
+      397,
+      67,
+      58
+    ],
+    "confidence": 0.6708,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_521",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.701415+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      314,
+      407,
+      104,
+      97
+    ],
+    "confidence": 0.6095,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_522",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.706677+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      531,
+      332,
+      55,
+      52
+    ],
+    "confidence": 0.5049,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_523",
+    "vehicle_type": "Truck",
+    "weight": 3,
+    "timestamp": "2025-06-06T22:53:45.909259+00:00",
+    "direction": "westbound",
+    "bbox": [
+      786,
+      377,
+      85,
+      81
+    ],
+    "confidence": 0.8606,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      0,
+      140,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_524",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.914609+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      482,
+      336,
+      43,
+      37
+    ],
+    "confidence": 0.7369,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
+  },
+  {
+    "camera_id": 1,
+    "track_id": "trk_2025-06-06_1_525",
+    "vehicle_type": "Station wagon",
+    "weight": 1,
+    "timestamp": "2025-06-06T22:53:45.919772+00:00",
+    "direction": "eastbound",
+    "bbox": [
+      295,
+      415,
+      111,
+      105
+    ],
+    "confidence": 0.603,
+    "frame_size": [
+      1280,
+      720
+    ],
+    "color": [
+      255,
+      0,
+      255
+    ]
   }
 ]

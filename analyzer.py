@@ -1,3 +1,4 @@
+import shutil
 import cv2
 import numpy as np
 from shapely.geometry import Point, Polygon
@@ -7,15 +8,56 @@ from typing import Dict, List, Optional
 import json
 import os
 import logging
+import datetime
+from filelock import FileLock
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class VideoAnalyzer:
     def __init__(self):
-        self.model = self._load_model()
-        self.cameras = self._load_cameras()
-        self.polygons = self._load_polygons()
+        # Сначала инициализируем критически важные пути
+        self.analysis_file = 'data/analysis.json'
+        self.lock_file = 'data/analysis.lock'
+        
+        # Создаем директорию data если ее нет
+        try:
+            os.makedirs('data', exist_ok=True)
+            logger.info(f"Директория 'data' создана или уже существует")
+        except Exception as e:
+            logger.error(f"Ошибка создания директории 'data': {str(e)}")
+            raise
+        
+        # Инициализируем файл анализа (должно быть перед всеми операциями с файлами)
+        try:
+            self._init_analysis_file()
+        except Exception as e:
+            logger.error(f"Ошибка инициализации файла анализа: {str(e)}")
+            raise
+        
+        # Затем загружаем модель и данные
+        try:
+            self.model = self._load_model()
+            logger.info("Модель YOLO успешно загружена")
+        except Exception as e:
+            logger.error(f"Ошибка загрузки модели: {str(e)}")
+            raise
+        
+        try:
+            self.cameras = self._load_cameras()
+            logger.info(f"Загружены данные по {len(self.cameras)} камерам")
+        except Exception as e:
+            logger.error(f"Ошибка загрузки данных камер: {str(e)}")
+            self.cameras = {}
+        
+        try:
+            self.polygons = self._load_polygons()
+            logger.info(f"Загружены полигоны для {len(self.polygons)} камер")
+        except Exception as e:
+            logger.error(f"Ошибка загрузки полигонов: {str(e)}")
+            self.polygons = {}
+        
+        # Карта классов транспортных средств
         self.class_map = {
             0: ('Coupe', (0, 0, 255)),
             1: ('Crossover', (0, 255, 0)),
@@ -24,6 +66,85 @@ class VideoAnalyzer:
             4: ('Station wagon', (255, 0, 255)),
             5: ('Truck', (0, 140, 255))
         }
+        
+        logger.info("Инициализация VideoAnalyzer завершена успешно")
+
+    def _init_analysis_file(self):
+        """Инициализация файла анализа с блокировкой"""
+        try:
+            with FileLock(self.lock_file):
+                if not os.path.exists(self.analysis_file):
+                    with open(self.analysis_file, 'w') as f:
+                        json.dump([], f)
+        except Exception as e:
+            logger.error(f"Error initializing analysis file: {str(e)}")
+            raise
+
+    def _save_detection(self, camera_id: int, detection: dict):
+        """Безопасное сохранение данных с блокировкой и резервированием"""
+        backup_path = f"{self.analysis_file}.bak"
+        temp_path = f"{self.analysis_file}.tmp"
+        
+        with FileLock(self.lock_file):  # Блокировка для потокобезопасности
+            try:
+                # 1. Создаем резервную копию
+                if os.path.exists(self.analysis_file):
+                    shutil.copyfile(self.analysis_file, backup_path)
+                
+                # 2. Загружаем существующие данные
+                data = []
+                if os.path.exists(self.analysis_file):
+                    with open(self.analysis_file, 'r') as f:
+                        try:
+                            data = json.load(f)
+                            if not isinstance(data, list):
+                                raise ValueError("Invalid data format: not a list")
+                        except json.JSONDecodeError:
+                            logger.error("Ошибка чтения JSON, восстанавливаем из резервной копии")
+                            if os.path.exists(backup_path):
+                                shutil.copyfile(backup_path, self.analysis_file)
+                                with open(self.analysis_file, 'r') as f:
+                                    data = json.load(f)
+                
+                # 3. Добавляем новую запись
+                timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                record = {
+                    "camera_id": camera_id,
+                    "track_id": f"trk_{timestamp[:10]}_{camera_id}_{len(data)}",
+                    "vehicle_type": detection['type'],
+                    "weight": detection['weight'],
+                    "timestamp": timestamp,
+                    "direction": detection['direction'],
+                    "bbox": detection['bbox'],
+                    "confidence": round(float(detection['confidence']), 4),  # Округление
+                    "frame_size": [1280, 720],
+                    "color": detection['color']  # Сохраняем цвет для визуализации
+                }
+                data.append(record)
+                
+                # 4. Атомарная запись через временный файл
+                with open(temp_path, 'w') as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                
+                # 5. Заменяем оригинальный файл
+                os.replace(temp_path, self.analysis_file)
+                
+                logger.debug(f"Сохранено обнаружение: {record['track_id']}")
+                
+            except Exception as e:
+                logger.error(f"Ошибка сохранения: {str(e)}")
+                # Восстановление из резервной копии при ошибке
+                if os.path.exists(backup_path) and not os.path.exists(self.analysis_file):
+                    shutil.copyfile(backup_path, self.analysis_file)
+                raise
+            finally:
+                # Удаляем временные файлы
+                for path in [backup_path, temp_path]:
+                    if os.path.exists(path):
+                        try:
+                            os.remove(path)
+                        except Exception as e:
+                            logger.warning(f"Не удалось удалить временный файл {path}: {str(e)}")
 
     def _load_model(self):
         """Загрузка обученной модели YOLO"""
@@ -99,19 +220,21 @@ class VideoAnalyzer:
                 if class_id not in self.class_map:
                     continue
                     
-                # Извлекаем название и цвет класса
                 vehicle_name, vehicle_color = self.class_map[class_id]
                 center = Point((x1 + x2) / 2, (y1 + y2) / 2)
                 direction = self._get_direction(center, camera_id)
                 
-                detections.append({
+                detection_data = {
                     'bbox': [x1, y1, x2 - x1, y2 - y1],
-                    'type': vehicle_name,  # Сохраняем только название
-                    'color': vehicle_color,  # Добавляем цвет
+                    'type': vehicle_name,
+                    'color': vehicle_color,
                     'direction': direction,
                     'confidence': confidence,
                     'weight': 3 if vehicle_name == 'Truck' else 1
-                })
+                }
+                
+                detections.append(detection_data)
+                self._save_detection(camera_id, detection_data)  # Сохраняем каждое обнаружение
             
             return {
                 'detections': detections,
@@ -121,7 +244,6 @@ class VideoAnalyzer:
         except Exception as e:
             logger.error(f"Ошибка анализа кадра: {str(e)}")
             return {'detections': [], 'frame': frame}
-    
 
     def _get_direction(self, point: Point, camera_id: int) -> str:
         """Определение направления движения"""
