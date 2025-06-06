@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from shapely.geometry import Point, Polygon
+import torch
 from ultralytics import YOLO
 from typing import Dict, List, Optional
 import json
@@ -21,11 +22,18 @@ class VideoAnalyzer:
         }
 
     def _load_model(self):
-        """Загрузка модели YOLO с повторами"""
+        """Загрузка обученной модели YOLO"""
         from ultralytics import YOLO
         try:
-            model = YOLO("yolov8n.pt")
-            logger.info("Модель YOLO успешно загружена")
+            # Укажите правильный путь к вашей модели
+            model_path = "models/best.pt"
+            model = YOLO(model_path)
+            
+            # Проверка доступности GPU
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            model.to(device)
+            
+            logger.info(f"Модель YOLO успешно загружена с устройства {device}")
             return model
         except Exception as e:
             logger.error(f"Ошибка загрузки модели: {str(e)}")
@@ -65,11 +73,19 @@ class VideoAnalyzer:
         except Exception as e:
             logger.error(f"Ошибка загрузки polygons.geojson: {str(e)}")
             return {}
-
+        
     def analyze_frame(self, frame: np.ndarray, camera_id: int) -> Dict:
-        """Анализ одного кадра"""
+        """Анализ одного кадра с обученной моделью"""
         try:
-            results = self.model(frame)[0]
+            # Добавьте параметры как при обучении
+            results = self.model(
+                frame,
+                imgsz=1280,  # Должно соответствовать размеру при обучении
+                conf=0.5,    # Порог уверенности
+                iou=0.45,    # Порог IoU
+                device='cuda' if torch.cuda.is_available() else 'cpu'
+            )[0]
+            
             detections = []
             
             for box in results.boxes:
@@ -77,6 +93,7 @@ class VideoAnalyzer:
                 class_id = int(box.cls[0].item())
                 confidence = float(box.conf[0].item())
                 
+                # Убедитесь, что class_map соответствует вашим классам
                 if class_id not in self.class_map:
                     continue
                     
