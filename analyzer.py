@@ -17,12 +17,12 @@ class VideoAnalyzer:
         self.cameras = self._load_cameras()
         self.polygons = self._load_polygons()
         self.class_map = {
-            0: ('Coupe', (0, 0, 255)),      # Красный (BGR)
-            1: ('Crossover', (0, 255, 0)),  # Зелёный
-            2: ('Hatchback', (255, 0, 0)),  # Синий
-            3: ('Sedan', (0, 255, 255)),    # Жёлтый
-            4: ('Station wagon', (255, 0, 255)), # Розовый
-            5: ('Truck', (0, 140, 255))     # Оранжевый
+            0: ('Coupe', (0, 0, 255)),
+            1: ('Crossover', (0, 255, 0)),
+            2: ('Hatchback', (255, 0, 0)),
+            3: ('Sedan', (0, 255, 255)),
+            4: ('Station wagon', (255, 0, 255)),
+            5: ('Truck', (0, 140, 255))
         }
 
     def _load_model(self):
