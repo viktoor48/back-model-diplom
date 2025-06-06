@@ -17,12 +17,12 @@ class VideoAnalyzer:
         self.cameras = self._load_cameras()
         self.polygons = self._load_polygons()
         self.class_map = {
-            0: ('Coupe', (255, 0, 0)),      # Синий
+            0: ('Coupe', (0, 0, 255)),      # Красный (BGR)
             1: ('Crossover', (0, 255, 0)),  # Зелёный
-            2: ('Hatchback', (0, 0, 255)),  # Красный
-            3: ('Sedan', (255, 255, 0)),    # Голубой
+            2: ('Hatchback', (255, 0, 0)),  # Синий
+            3: ('Sedan', (0, 255, 255)),    # Жёлтый
             4: ('Station wagon', (255, 0, 255)), # Розовый
-            5: ('Truck', (0, 165, 255))     # Оранжевый
+            5: ('Truck', (0, 140, 255))     # Оранжевый
         }
 
     def _load_model(self):
@@ -81,12 +81,11 @@ class VideoAnalyzer:
     def analyze_frame(self, frame: np.ndarray, camera_id: int) -> Dict:
         """Анализ одного кадра с обученной моделью"""
         try:
-            # Добавьте параметры как при обучении
             results = self.model(
                 frame,
-                imgsz=1280,  # Должно соответствовать размеру при обучении
-                conf=0.5,    # Порог уверенности
-                iou=0.45,    # Порог IoU
+                imgsz=1280,
+                conf=0.5,
+                iou=0.45,
                 device='cuda' if torch.cuda.is_available() else 'cpu'
             )[0]
             
@@ -97,20 +96,21 @@ class VideoAnalyzer:
                 class_id = int(box.cls[0].item())
                 confidence = float(box.conf[0].item())
                 
-                # Убедитесь, что class_map соответствует вашим классам
                 if class_id not in self.class_map:
                     continue
                     
-                vehicle_type = self.class_map[class_id]
+                # Извлекаем название и цвет класса
+                vehicle_name, vehicle_color = self.class_map[class_id]
                 center = Point((x1 + x2) / 2, (y1 + y2) / 2)
                 direction = self._get_direction(center, camera_id)
                 
                 detections.append({
                     'bbox': [x1, y1, x2 - x1, y2 - y1],
-                    'type': vehicle_type,
+                    'type': vehicle_name,  # Сохраняем только название
+                    'color': vehicle_color,  # Добавляем цвет
                     'direction': direction,
                     'confidence': confidence,
-                    'weight': 3 if vehicle_type == 'Truck' else 1
+                    'weight': 3 if vehicle_name == 'Truck' else 1
                 })
             
             return {
@@ -121,6 +121,7 @@ class VideoAnalyzer:
         except Exception as e:
             logger.error(f"Ошибка анализа кадра: {str(e)}")
             return {'detections': [], 'frame': frame}
+    
 
     def _get_direction(self, point: Point, camera_id: int) -> str:
         """Определение направления движения"""
@@ -147,7 +148,7 @@ class VideoAnalyzer:
         """Отрисовка результатов с цветами по классам"""
         for det in detections:
             x, y, w, h = det['bbox']
-            color = (0, 165, 255) if det['type'] == 'Truck' else (0, 255, 0)  # Красный для грузовиков
+            color = det['color']  # Используем цвет из detection
             
             # Рисуем bounding box
             cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
