@@ -8,6 +8,7 @@ import time
 import threading
 import logging
 from analyzer import VideoAnalyzer
+import numpy as np 
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -28,31 +29,64 @@ class VideoProcessor:
         self.current_frame = None
         self.detections = []
         self.processing = False
-        self.lock = threading.Lock()  # Added lock for thread safety
+        self.lock = threading.Lock()
+        self.last_frame_time = 0
+        self.frame_skip = 2  # Обрабатываем каждый 3-й кадр
+        self.target_size = (1280, 720)  # Целевой размер кадра
 
     def process_video(self, file_path: str, camera_id: int):
         self.processing = True
         cap = cv2.VideoCapture(file_path)
         
         try:
+            frame_count = 0
             while self.processing and cap.isOpened():
                 ret, frame = cap.read()
                 if not ret:
                     break
                 
-                result = analyzer.analyze_frame(frame, camera_id)
+                frame_count += 1
+                if frame_count % self.frame_skip != 0:  # Пропускаем кадры
+                    continue
                 
-                # Use lock when updating shared variables
-                with self.lock:
-                    self.current_frame = result['frame']
-                    self.detections = result['detections']
+                # Проверка и логирование входного кадра
+                logger.debug(f"Input frame shape: {frame.shape}")
+                if len(frame.shape) != 3 or frame.shape[2] != 3:
+                    logger.error(f"Некорректный формат кадра: {frame.shape}")
+                    continue
                 
-                time.sleep(0.033)  # ~30 FPS
+                try:
+                    # Ресайз и конвертация цвета
+                    frame = cv2.resize(frame, self.target_size)
+                    if frame.dtype != np.uint8:
+                        frame = frame.astype(np.uint8)
+                    
+                    # Анализ кадра
+                    result = analyzer.analyze_frame(frame, camera_id)
+                    
+                    # Обновление результатов
+                    with self.lock:
+                        self.current_frame = result['frame']
+                        self.detections = result['detections']
+                    
+                    # Контроль FPS (максимум 30 кадров/сек)
+                    elapsed = time.time() - self.last_frame_time
+                    sleep_time = max(0, 0.033 - elapsed)
+                    time.sleep(sleep_time)
+                    self.last_frame_time = time.time()
+                    
+                except Exception as e:
+                    logger.error(f"Ошибка обработки кадра: {str(e)}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Ошибка в процессе видео: {str(e)}")
         finally:
             cap.release()
             if os.path.exists(file_path):
                 os.remove(file_path)
             self.processing = False
+            logger.info("Обработка видео завершена")
 
 processor = VideoProcessor()
 

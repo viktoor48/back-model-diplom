@@ -17,8 +17,12 @@ class VideoAnalyzer:
         self.cameras = self._load_cameras()
         self.polygons = self._load_polygons()
         self.class_map = {
-            2: 'Sedan', 5: 'Hatchback', 7: 'Crossover',
-            9: 'Truck', 3: 'Station wagon', 1: 'Coupe'
+            0: ('Coupe', (255, 0, 0)),      # Синий
+            1: ('Crossover', (0, 255, 0)),  # Зелёный
+            2: ('Hatchback', (0, 0, 255)),  # Красный
+            3: ('Sedan', (255, 255, 0)),    # Голубой
+            4: ('Station wagon', (255, 0, 255)), # Розовый
+            5: ('Truck', (0, 165, 255))     # Оранжевый
         }
 
     def _load_model(self):
@@ -140,12 +144,22 @@ class VideoAnalyzer:
         return [[int(x * w), int(y * h)] for x, y in points]
 
     def _draw_results(self, frame: np.ndarray, detections: List[Dict]) -> np.ndarray:
-        """Отрисовка результатов на кадре"""
+        """Отрисовка результатов с цветами по классам"""
         for det in detections:
             x, y, w, h = det['bbox']
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            color = (0, 165, 255) if det['type'] == 'Truck' else (0, 255, 0)  # Красный для грузовиков
+            
+            # Рисуем bounding box
+            cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
+            
+            # Рисуем текст с фоном
+            label = f"{det['type']} {det['confidence']:.2f}"
+            (text_width, text_height), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
+            
+            # Фон для текста
+            cv2.rectangle(frame, (x, y - text_height - 10), (x + text_width, y), color, -1)
             cv2.putText(
-                frame, f"{det['type']} {det['direction']}",
-                (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1
+                frame, label,
+                (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1  # Чёрный текст
             )
         return frame
