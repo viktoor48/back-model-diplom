@@ -14,6 +14,14 @@ from fastapi.responses import JSONResponse
 from datetime import datetime, timedelta
 import pandas as pd
 from io import BytesIO
+from pathlib import Path
+from dateutil.parser import parse
+import pytz
+
+CAMERAS_FILE = 'data/cameras.json'
+POLYGONS_FILE = 'data/polygons.geojson'
+
+Path('data').mkdir(exist_ok=True)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -172,7 +180,8 @@ async def test_data():
 async def export_report(
     period: str = None,
     start_date: str = None,
-    end_date: str = None
+    end_date: str = None,
+    fields: str = None
 ):
     try:
         # Загружаем данные
@@ -184,87 +193,109 @@ async def export_report(
         
         if not data:
             raise HTTPException(status_code=404, detail="No data available")
-        
-        # Фильтрация по дате (остается без изменений)
+
+        # Функция для парсинга даты (добавьте это в начало файла server.py с другими импортами)
+        def parse_datetime(dt_str):
+            try:
+                # Сначала пробуем стандартный ISO формат
+                try:
+                    return datetime.fromisoformat(dt_str)
+                except ValueError:
+                    # Пробуем альтернативные форматы
+                    try:
+                        return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S%z")
+                    except ValueError:
+                        return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S.%f%z")
+            except Exception as e:
+                logger.error(f"Error parsing datetime {dt_str}: {str(e)}")
+                return datetime.min  # Возвращаем минимальную дату в случае ошибки
+
+        # Фильтрация по дате с использованием новой функции parse_datetime
         filtered_data = []
-        now = datetime.utcnow()
+        now = datetime.now(pytz.UTC) if hasattr(pytz, 'UTC') else datetime.utcnow()
         
         if period == "5min":
             cutoff = now - timedelta(minutes=5)
-            filtered_data = [item for item in data if datetime.fromisoformat(item['timestamp']) > cutoff]
+            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
         elif period == "10min":
             cutoff = now - timedelta(minutes=10)
-            filtered_data = [item for item in data if datetime.fromisoformat(item['timestamp']) > cutoff]
+            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
         elif period == "1h":
             cutoff = now - timedelta(hours=1)
-            filtered_data = [item for item in data if datetime.fromisoformat(item['timestamp']) > cutoff]
+            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
         elif period == "week":
             cutoff = now - timedelta(weeks=1)
-            filtered_data = [item for item in data if datetime.fromisoformat(item['timestamp']) > cutoff]
+            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
         elif period == "month":
             cutoff = now - timedelta(days=30)
-            filtered_data = [item for item in data if datetime.fromisoformat(item['timestamp']) > cutoff]
+            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
         elif period == "custom" and start_date and end_date:
-            start = datetime.fromisoformat(start_date)
-            end = datetime.fromisoformat(end_date)
-            filtered_data = [
-                item for item in data 
-                if start <= datetime.fromisoformat(item['timestamp']) <= end
-            ]
+            try:
+                start = parse_datetime(start_date)
+                end = parse_datetime(end_date)
+                filtered_data = [
+                    item for item in data 
+                    if start <= parse_datetime(item['timestamp']) <= end
+                ]
+            except Exception as e:
+                raise HTTPException(status_code=400, detail=f"Invalid date format: {str(e)}")
         else:
             filtered_data = data
         
         if not filtered_data:
             raise HTTPException(status_code=404, detail="No data for selected period")
-        
-        # Создаем DataFrame
-        df = pd.DataFrame(filtered_data)
-        
-        # Функция проверки наличия поля
-        def has_valid_field(field, item):
-            return field in item and item[field] is not None and item[field] != ''
 
-        # Собираем только существующие и валидные поля
-        columns_to_export = []
-        field_mapping = [
-            ('timestamp', 'Timestamp'),
-            ('camera_id', 'Camera ID'),
-            ('track_id', 'Track ID'),
-            ('vehicle_type', 'Vehicle Type'),
-            ('direction', 'Direction'),
-            ('confidence', 'Confidence'),
-            ('weight', 'Weight')
-        ]
-        
-        for field, display_name in field_mapping:
-            if any(has_valid_field(field, item) for item in filtered_data):
-                columns_to_export.append((field, display_name))
-        
-        if not columns_to_export:
+        # Определяем доступные поля для экспорта
+        all_fields = {
+            'timestamp': 'Timestamp',
+            'camera_id': 'Camera ID',
+            'track_id': 'Track ID',
+            'vehicle_type': 'Vehicle Type',
+            'direction': 'Direction',
+            'confidence': 'Confidence',
+            'weight': 'Weight'
+        }
+
+        # Обрабатываем запрошенные поля
+        if fields:
+            requested_fields = [f.strip() for f in fields.split(',') if f.strip()]
+            valid_fields = [(f, all_fields[f]) for f in requested_fields if f in all_fields]
+            if not valid_fields:
+                raise HTTPException(status_code=400, detail="No valid fields selected")
+        else:
+            # Если поля не указаны, используем все доступные
+            valid_fields = [(f, n) for f, n in all_fields.items() 
+                          if any(f in item and item[f] not in [None, ''] for item in filtered_data)]
+
+        if not valid_fields:
             raise HTTPException(status_code=400, detail="No valid data fields found")
-        
+
         # Создаем Excel файл
         output = BytesIO()
         with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-            # Создаем DataFrame только с нужными колонками
+            # Формируем данные только с выбранными полями
             report_data = []
             for item in filtered_data:
-                row = {}
-                for field, display_name in columns_to_export:
-                    row[display_name] = item.get(field, 'N/A')
+                row = {display_name: item.get(field, 'N/A') 
+                      for field, display_name in valid_fields}
                 report_data.append(row)
             
             report_df = pd.DataFrame(report_data)
             
             # Форматируем дату, если есть
             if 'Timestamp' in report_df.columns:
-                report_df['Timestamp'] = pd.to_datetime(report_df['Timestamp']).dt.strftime('%Y-%m-%d %H:%M:%S')
+                try:
+                    report_df['Timestamp'] = pd.to_datetime(report_df['Timestamp']).dt.strftime('%Y-%m-%d %H:%M:%S')
+                except Exception as e:
+                    logger.error(f"Error formatting timestamp: {str(e)}")
+                    report_df['Timestamp'] = report_df['Timestamp'].astype(str)
             
+            # Записываем данные в Excel
             report_df.to_excel(writer, index=False, sheet_name='Report')
             worksheet = writer.sheets['Report']
             
             # Настраиваем ширину колонок
-            for i, (field, display_name) in enumerate(columns_to_export):
+            for i, (field, display_name) in enumerate(valid_fields):
                 max_len = max(
                     report_df[display_name].astype(str).map(len).max(),
                     len(display_name)
@@ -358,6 +389,86 @@ async def get_analysis_data(
             detail=str(e),
             headers={"Content-Type": "application/json"}
         )
+    
+@app.get("/cameras")
+async def get_cameras():
+    """Получение списка всех камер"""
+    try:
+        if not os.path.exists(CAMERAS_FILE):
+            return JSONResponse(content=[], media_type="application/json")
+        
+        with open(CAMERAS_FILE, 'r') as f:
+            cameras = json.load(f)
+        
+        return JSONResponse(content=cameras, media_type="application/json")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/update_camera")
+async def update_camera(data: dict):
+    """Обновление данных камеры"""
+    try:
+        camera_id = data['camera_id']
+        new_data = data['data']
+        
+        # Загружаем текущие данные
+        cameras = []
+        if os.path.exists(CAMERAS_FILE):
+            with open(CAMERAS_FILE, 'r') as f:
+                cameras = json.load(f)
+        
+        # Ищем камеру для обновления
+        updated = False
+        for i, cam in enumerate(cameras):
+            if cam['id'] == camera_id:
+                cameras[i] = {**cam, **new_data}
+                updated = True
+                break
+        
+        # Если камера не найдена, добавляем новую
+        if not updated:
+            cameras.append(new_data)
+        
+        # Сохраняем обратно
+        with open(CAMERAS_FILE, 'w') as f:
+            json.dump(cameras, f, indent=2)
+        
+        return {"status": "success", "camera_id": camera_id}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/update_polygon")
+async def update_polygon(data: dict):
+    """Обновление полигона"""
+    try:
+        camera_id = data['camera_id']
+        polygon_data = data['data']
+        
+        # Загружаем текущие полигоны
+        polygons = []
+        if os.path.exists(POLYGONS_FILE):
+            with open(POLYGONS_FILE, 'r') as f:
+                polygons = json.load(f)
+        
+        # Ищем полигон для обновления
+        updated = False
+        for i, poly in enumerate(polygons):
+            if poly['polygon_id'] == polygon_data.get('polygon_id'):
+                polygons[i] = polygon_data
+                updated = True
+                break
+        
+        # Если полигон не найден, добавляем новый
+        if not updated:
+            polygons.append(polygon_data)
+        
+        # Сохраняем обратно
+        with open(POLYGONS_FILE, 'w') as f:
+            json.dump(polygons, f, indent=2)
+        
+        return {"status": "success", "camera_id": camera_id}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn
