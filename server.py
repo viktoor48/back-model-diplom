@@ -17,6 +17,10 @@ from io import BytesIO
 from pathlib import Path
 from dateutil.parser import parse
 import pytz
+from fastapi import WebSocket, WebSocketDisconnect
+from fastapi.concurrency import run_in_threadpool
+import asyncio
+from typing import List
 
 CAMERAS_FILE = 'data/cameras.json'
 POLYGONS_FILE = 'data/polygons.geojson'
@@ -37,6 +41,38 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class ConnectionManager:
+    def __init__(self):
+        self.active_connections: List[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+
+    async def broadcast_frame(self, frame: np.ndarray, detections: list):
+        if not self.active_connections:
+            return
+            
+        _, jpeg = cv2.imencode('.jpg', frame)
+        data = {
+            "frame": jpeg.tobytes().hex(),
+            "detections": detections,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        for connection in self.active_connections:
+            try:
+                await connection.send_json(data)
+            except Exception as e:
+                logger.error(f"Error sending frame: {e}")
+                self.disconnect(connection)
+
+manager = ConnectionManager()
+
 class VideoProcessor:
     def __init__(self):
         self.current_frame = None
@@ -46,65 +82,74 @@ class VideoProcessor:
         self.last_frame_time = 0
         self.frame_skip = 2
         self.target_size = (1280, 720)
-        self.cap = None  # Добавляем ссылку на VideoCapture
+        self.cap = None
+        self.manager = manager
+        self.processing_task = None
 
-    def process_video(self, file_path: str, camera_id: int):
+    async def process_video(self, file_path: str, camera_id: int):
         self.processing = True
-        self.cap = cv2.VideoCapture(file_path)  # Сохраняем в поле класса
+        self.cap = cv2.VideoCapture(file_path)
         
         try:
             frame_count = 0
             while self.processing and self.cap.isOpened():
-                # Добавляем таймаут для чтения кадра
                 ret, frame = self.cap.read()
-                if not ret or not self.processing:  # Явная проверка флага
+                if not ret or not self.processing:
                     break
                 
                 frame_count += 1
                 if frame_count % self.frame_skip != 0:
                     continue
 
-                # Проверка и логирование входного кадра
-                logger.debug(f"Input frame shape: {frame.shape}")
-                if len(frame.shape) != 3 or frame.shape[2] != 3:
-                    logger.error(f"Некорректный формат кадра: {frame.shape}")
-                    continue
-                
                 try:
-                    # Ресайз и конвертация цвета
                     frame = cv2.resize(frame, self.target_size)
                     if frame.dtype != np.uint8:
                         frame = frame.astype(np.uint8)
                     
-                    # Анализ кадра
-                    result = analyzer.analyze_frame(frame, camera_id)
+                    # Асинхронный анализ кадра
+                    result = await run_in_threadpool(analyzer.analyze_frame, frame, camera_id)
                     
-                    # Обновление результатов
                     with self.lock:
                         self.current_frame = result['frame']
                         self.detections = result['detections']
                     
-                    # Контроль FPS (максимум 30 кадров/сек)
+                    # Отправка через WebSocket
+                    await self.manager.broadcast_frame(result['frame'], result['detections'])
+                    
+                    # Контроль FPS
                     elapsed = time.time() - self.last_frame_time
                     sleep_time = max(0, 0.033 - elapsed)
-                    time.sleep(sleep_time)
+                    await asyncio.sleep(sleep_time)
                     self.last_frame_time = time.time()
                     
                 except Exception as e:
-                    logger.error(f"Ошибка обработки кадра: {str(e)}")
+                    logger.error(f"Frame processing error: {str(e)}")
                     continue
 
         except Exception as e:
-            logger.error(f"Ошибка в процессе видео: {str(e)}")
+            logger.error(f"Video processing error: {str(e)}")
         finally:
             if self.cap:
                 self.cap.release()
             if os.path.exists(file_path):
                 os.remove(file_path)
             self.processing = False
-            logger.info("Обработка видео завершена")
+            logger.info("Video processing completed")
 
 processor = VideoProcessor()
+
+@app.websocket("/ws/video_feed")
+async def websocket_video_feed(websocket: WebSocket):
+    await manager.connect(websocket)
+    try:
+        while True:
+            # Просто держим соединение открытым
+            await websocket.receive_text()
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+    except Exception as e:
+        logger.error(f"WebSocket error: {e}")
+        manager.disconnect(websocket)
 
 @app.post("/start_analysis/{camera_id}")
 async def start_analysis(camera_id: int, file: UploadFile = File(...)):
@@ -112,24 +157,36 @@ async def start_analysis(camera_id: int, file: UploadFile = File(...)):
         if processor.processing:
             return {"status": "already_processing"}
 
-        # Save temporary file
+        # Сохраняем временный файл
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as tmp:
             contents = await file.read()
             tmp.write(contents)
             file_path = tmp.name
 
-        # Start processing in a separate thread
-        thread = threading.Thread(
-            target=processor.process_video,
-            args=(file_path, camera_id),
-            daemon=True  # Added daemon=True for proper thread cleanup
+        # Запускаем обработку видео как асинхронную задачу
+        processor.processing_task = asyncio.create_task(
+            processor.process_video(file_path, camera_id)
         )
-        thread.start()
 
         return {"status": "processing_started"}
     except Exception as e:
         logger.error(f"Error starting analysis: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/stop_analysis")
+async def stop_analysis():
+    if processor.processing:
+        processor.processing = False
+        if processor.processing_task:
+            processor.processing_task.cancel()
+            try:
+                await processor.processing_task
+            except asyncio.CancelledError:
+                pass
+        if processor.cap:
+            processor.cap.release()
+        logger.info("Video processing stopped")
+    return {"status": "processing_stopped"}
 
 @app.get("/current_frame")
 async def get_current_frame():
@@ -159,15 +216,6 @@ async def get_cameras():
     except Exception as e:
         logger.error(f"Error getting cameras: {e}")
         raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/stop_analysis")
-async def stop_analysis():
-    if processor.processing:
-        processor.processing = False
-        if processor.cap:  # Принудительно останавливаем VideoCapture
-            processor.cap.release()
-        logger.info("Обработка видео принудительно остановлена")
-    return {"status": "processing_stopped"}
 
 @app.get("/test_data")
 async def test_data():
