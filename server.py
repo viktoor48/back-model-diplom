@@ -20,26 +20,105 @@ import pytz
 from fastapi import WebSocket, WebSocketDisconnect
 from fastapi.concurrency import run_in_threadpool
 import asyncio
-from typing import List
+from typing import List, Optional
+from databases import Database
+from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, Boolean, JSON, Float, DateTime, ForeignKey
+from sqlalchemy.orm import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import sessionmaker
+import sqlalchemy as sa
 
-CAMERAS_FILE = 'data/cameras.json'
-POLYGONS_FILE = 'data/polygons.geojson'
+# Настройки базы данных
+DATABASE_URL = "postgresql://postgres:your_strong_password@db:5432/video_analysis"
+database = Database(DATABASE_URL)
 
-Path('data').mkdir(exist_ok=True)
-
-logging.basicConfig(level=logging.INFO)
+# Настройка логгера
 logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+Base = declarative_base()
+
+# Модели SQLAlchemy
+class Camera(Base):
+    __tablename__ = 'cameras'
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    location = Column(String(255))
+    stream_url = Column(String(255))
+    is_active = Column(Boolean, default=True, server_default='true')
+    created_at = Column(DateTime, server_default=sa.func.now())
+
+class Polygon(Base):
+    __tablename__ = 'polygons'
+    
+    id = Column(Integer, primary_key=True)
+    camera_id = Column(Integer, ForeignKey('cameras.id'), nullable=False)
+    name = Column(String(255))
+    coordinates = Column(JSON)
+    created_at = Column(DateTime, server_default=sa.func.now())
+
+class AnalysisResult(Base):
+    __tablename__ = 'analysis_results'
+    
+    id = Column(Integer, primary_key=True)
+    camera_id = Column(Integer, ForeignKey('cameras.id'), nullable=False)
+    track_id = Column(String(255))
+    vehicle_type = Column(String(50))
+    direction = Column(String(50))
+    confidence = Column(Float)
+    weight = Column(Float)
+    timestamp = Column(DateTime)
+    created_at = Column(DateTime, server_default=sa.func.now())
 
 app = FastAPI()
-analyzer = VideoAnalyzer()
+analyzer = VideoAnalyzer(database) 
 
-# Fixed the middleware name (was CORS_middleware)
+# Middleware CORS
 app.add_middleware(
-    CORSMiddleware,  # Corrected the class name
+    CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Модели Pydantic
+class CameraModel(BaseModel):
+    id: int
+    name: str
+    location: str
+    stream_url: str
+    is_active: bool
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
+
+class PolygonModel(BaseModel):
+    id: int
+    camera_id: int
+    name: str
+    coordinates: dict
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
+
+class AnalysisResultModel(BaseModel):
+    id: int
+    camera_id: int
+    track_id: str
+    vehicle_type: str
+    direction: str
+    confidence: float
+    weight: float
+    timestamp: datetime
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
 
 class ConnectionManager:
     def __init__(self):
@@ -106,17 +185,14 @@ class VideoProcessor:
                     if frame.dtype != np.uint8:
                         frame = frame.astype(np.uint8)
                     
-                    # Асинхронный анализ кадра
                     result = await run_in_threadpool(analyzer.analyze_frame, frame, camera_id)
                     
                     with self.lock:
                         self.current_frame = result['frame']
                         self.detections = result['detections']
                     
-                    # Отправка через WebSocket
                     await self.manager.broadcast_frame(result['frame'], result['detections'])
                     
-                    # Контроль FPS
                     elapsed = time.time() - self.last_frame_time
                     sleep_time = max(0, 0.033 - elapsed)
                     await asyncio.sleep(sleep_time)
@@ -138,12 +214,31 @@ class VideoProcessor:
 
 processor = VideoProcessor()
 
+# Инициализация асинхронного движка SQLAlchemy
+engine = create_async_engine(DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://"))
+async_session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+
+@app.on_event("startup")
+async def startup():
+    await database.connect()
+    # Создаем таблицы через SQLAlchemy
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    
+    # Инициализируем анализатор
+    await analyzer.initialize()
+
+@app.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
+    await engine.dispose()
+
+# Вебсокет endpoint
 @app.websocket("/ws/video_feed")
 async def websocket_video_feed(websocket: WebSocket):
     await manager.connect(websocket)
     try:
         while True:
-            # Просто держим соединение открытым
             await websocket.receive_text()
     except WebSocketDisconnect:
         manager.disconnect(websocket)
@@ -151,19 +246,18 @@ async def websocket_video_feed(websocket: WebSocket):
         logger.error(f"WebSocket error: {e}")
         manager.disconnect(websocket)
 
+# Остальные endpoint'ы (анализ видео, управление камерами и т.д.)
 @app.post("/start_analysis/{camera_id}")
 async def start_analysis(camera_id: int, file: UploadFile = File(...)):
     try:
         if processor.processing:
             return {"status": "already_processing"}
 
-        # Сохраняем временный файл
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as tmp:
             contents = await file.read()
             tmp.write(contents)
             file_path = tmp.name
 
-        # Запускаем обработку видео как асинхронную задачу
         processor.processing_task = asyncio.create_task(
             processor.process_video(file_path, camera_id)
         )
@@ -193,7 +287,6 @@ async def get_current_frame():
     if processor.current_frame is None:
         raise HTTPException(status_code=404, detail="No frame data available")
     
-    # Use lock when accessing shared variables
     with processor.lock:
         _, jpeg = cv2.imencode('.jpg', processor.current_frame)
     
@@ -204,96 +297,177 @@ async def get_current_frame():
 
 @app.get("/current_detections")
 async def get_current_detections():
-    # Use lock when accessing shared variables
     with processor.lock:
         return processor.detections
 
-@app.get("/cameras")
+# CRUD для камер
+@app.get("/cameras", response_model=List[CameraModel])
 async def get_cameras():
+    async with async_session() as session:
+        result = await session.execute(sa.select(Camera))
+        cameras = result.scalars().all()
+        return cameras
+
+@app.post("/cameras", response_model=CameraModel)
+async def create_camera(camera: CameraModel):
+    async with async_session() as session:
+        db_camera = Camera(**camera.dict())
+        session.add(db_camera)
+        await session.commit()
+        await session.refresh(db_camera)
+        return db_camera
+    
+@app.get("/polygons")
+async def get_polygons(camera_id: Optional[int] = None):
     try:
-        cameras = list(analyzer.cameras.values())
-        return JSONResponse(content=cameras)  # Явно указываем JSON-ответ
+        if camera_id:
+            query = "SELECT * FROM polygons WHERE camera_id = :camera_id"
+            polygons = await database.fetch_all(query, {"camera_id": camera_id})
+        else:
+            query = "SELECT * FROM polygons"
+            polygons = await database.fetch_all(query)
+        
+        return [dict(polygon) for polygon in polygons]
     except Exception as e:
-        logger.error(f"Error getting cameras: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/test_data")
-async def test_data():
-    return JSONResponse(
-        content={"test": "success", "message": "API is working"},
-        media_type="application/json"
-    )
+@app.post("/update_polygon")
+async def update_polygon(data: dict):
+    try:
+        camera_id = data.get('camera_id')
+        polygon_data = data.get('data', {})
+        
+        # Проверяем существование полигона
+        existing = await database.fetch_one(
+            "SELECT id FROM polygons WHERE id = :id",
+            {"id": polygon_data.get('id')}
+        )
+        
+        if existing:
+            # Обновляем существующий полигон
+            query = """
+                UPDATE polygons 
+                SET name = :name, coordinates = :coordinates
+                WHERE id = :id
+            """
+            values = {
+                "id": polygon_data.get('id'),
+                "name": polygon_data.get('name'),
+                "coordinates": polygon_data.get('coordinates')
+            }
+        else:
+            # Создаем новый полигон
+            query = """
+                INSERT INTO polygons 
+                (camera_id, name, coordinates)
+                VALUES (:camera_id, :name, :coordinates)
+                RETURNING id
+            """
+            values = {
+                "camera_id": camera_id,
+                "name": polygon_data.get('name'),
+                "coordinates": polygon_data.get('coordinates')
+            }
+        
+        await database.execute(query, values)
+        return {"status": "success", "camera_id": camera_id}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/analysis_data")
+async def get_analysis_data(
+    camera_id: Optional[str] = None,
+    search: Optional[str] = None,
+    page: int = 1,
+    limit: int = 20
+):
+    try:
+        base_query = "SELECT * FROM analysis_results"
+        count_query = "SELECT COUNT(*) FROM analysis_results"
+        conditions = []
+        values = {}
+        
+        if camera_id:
+            camera_ids = [int(id) for id in camera_id.split(',')]
+            conditions.append("camera_id = ANY(:camera_ids)")
+            values["camera_ids"] = camera_ids
+        
+        if search:
+            search = f"%{search.lower()}%"
+            conditions.append(
+                "(LOWER(track_id) LIKE :search OR LOWER(vehicle_type) LIKE :search)"
+            )
+            values["search"] = search
+        
+        if conditions:
+            where_clause = " WHERE " + " AND ".join(conditions)
+            base_query += where_clause
+            count_query += where_clause
+        
+        # Получаем общее количество
+        total = await database.fetch_val(count_query, values)
+        
+        # Добавляем сортировку и пагинацию
+        base_query += " ORDER BY timestamp DESC LIMIT :limit OFFSET :offset"
+        values["limit"] = limit
+        values["offset"] = (page - 1) * limit
+        
+        data = await database.fetch_all(base_query, values)
+        
+        return {
+            "data": [dict(item) for item in data],
+            "total": total,
+            "page": page,
+            "limit": limit,
+            "has_more": (page * limit) < total
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/export_report")
 async def export_report(
-    period: str = None,
-    start_date: str = None,
-    end_date: str = None,
-    fields: str = None
+    period: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+    fields: Optional[str] = None
 ):
     try:
-        # Загружаем данные
-        if not os.path.exists('data/analysis.json'):
-            raise HTTPException(status_code=404, detail="No data available")
-        
-        with open('data/analysis.json', 'r') as f:
-            data = json.load(f)
-        
-        if not data:
-            raise HTTPException(status_code=404, detail="No data available")
-
-        # Функция для парсинга даты (добавьте это в начало файла server.py с другими импортами)
-        def parse_datetime(dt_str):
-            try:
-                # Сначала пробуем стандартный ISO формат
-                try:
-                    return datetime.fromisoformat(dt_str)
-                except ValueError:
-                    # Пробуем альтернативные форматы
-                    try:
-                        return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S%z")
-                    except ValueError:
-                        return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S.%f%z")
-            except Exception as e:
-                logger.error(f"Error parsing datetime {dt_str}: {str(e)}")
-                return datetime.min  # Возвращаем минимальную дату в случае ошибки
-
-        # Фильтрация по дате с использованием новой функции parse_datetime
-        filtered_data = []
+        # Определяем временной диапазон
         now = datetime.now(pytz.UTC) if hasattr(pytz, 'UTC') else datetime.utcnow()
+        time_conditions = {
+            "5min": now - timedelta(minutes=5),
+            "10min": now - timedelta(minutes=10),
+            "1h": now - timedelta(hours=1),
+            "week": now - timedelta(weeks=1),
+            "month": now - timedelta(days=30)
+        }
         
-        if period == "5min":
-            cutoff = now - timedelta(minutes=5)
-            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
-        elif period == "10min":
-            cutoff = now - timedelta(minutes=10)
-            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
-        elif period == "1h":
-            cutoff = now - timedelta(hours=1)
-            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
-        elif period == "week":
-            cutoff = now - timedelta(weeks=1)
-            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
-        elif period == "month":
-            cutoff = now - timedelta(days=30)
-            filtered_data = [item for item in data if parse_datetime(item['timestamp']) > cutoff]
+        base_query = "SELECT * FROM analysis_results"
+        conditions = []
+        values = {}
+        
+        if period and period in time_conditions:
+            conditions.append("timestamp >= :cutoff")
+            values["cutoff"] = time_conditions[period]
         elif period == "custom" and start_date and end_date:
             try:
                 start = parse_datetime(start_date)
                 end = parse_datetime(end_date)
-                filtered_data = [
-                    item for item in data 
-                    if start <= parse_datetime(item['timestamp']) <= end
-                ]
+                conditions.append("timestamp BETWEEN :start AND :end")
+                values["start"] = start
+                values["end"] = end
             except Exception as e:
                 raise HTTPException(status_code=400, detail=f"Invalid date format: {str(e)}")
-        else:
-            filtered_data = data
         
-        if not filtered_data:
+        if conditions:
+            base_query += " WHERE " + " AND ".join(conditions)
+        
+        # Получаем данные
+        data = await database.fetch_all(base_query, values)
+        if not data:
             raise HTTPException(status_code=404, detail="No data for selected period")
-
-        # Определяем доступные поля для экспорта
+        
+        # Определяем поля для экспорта
         all_fields = {
             'timestamp': 'Timestamp',
             'camera_id': 'Camera ID',
@@ -303,47 +477,37 @@ async def export_report(
             'confidence': 'Confidence',
             'weight': 'Weight'
         }
-
-        # Обрабатываем запрошенные поля
+        
         if fields:
             requested_fields = [f.strip() for f in fields.split(',') if f.strip()]
             valid_fields = [(f, all_fields[f]) for f in requested_fields if f in all_fields]
             if not valid_fields:
                 raise HTTPException(status_code=400, detail="No valid fields selected")
         else:
-            # Если поля не указаны, используем все доступные
-            valid_fields = [(f, n) for f, n in all_fields.items() 
-                          if any(f in item and item[f] not in [None, ''] for item in filtered_data)]
-
-        if not valid_fields:
-            raise HTTPException(status_code=400, detail="No valid data fields found")
-
+            valid_fields = [(f, n) for f, n in all_fields.items()]
+        
+        # Формируем данные для Excel
+        report_data = []
+        for item in data:
+            row = {display_name: item.get(field, 'N/A') 
+                  for field, display_name in valid_fields}
+            report_data.append(row)
+        
         # Создаем Excel файл
         output = BytesIO()
         with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-            # Формируем данные только с выбранными полями
-            report_data = []
-            for item in filtered_data:
-                row = {display_name: item.get(field, 'N/A') 
-                      for field, display_name in valid_fields}
-                report_data.append(row)
-            
             report_df = pd.DataFrame(report_data)
             
-            # Форматируем дату, если есть
             if 'Timestamp' in report_df.columns:
                 try:
                     report_df['Timestamp'] = pd.to_datetime(report_df['Timestamp']).dt.strftime('%Y-%m-%d %H:%M:%S')
-                except Exception as e:
-                    logger.error(f"Error formatting timestamp: {str(e)}")
+                except Exception:
                     report_df['Timestamp'] = report_df['Timestamp'].astype(str)
             
-            # Записываем данные в Excel
             report_df.to_excel(writer, index=False, sheet_name='Report')
             worksheet = writer.sheets['Report']
             
-            # Настраиваем ширину колонок
-            for i, (field, display_name) in enumerate(valid_fields):
+            for i, (_, display_name) in enumerate(valid_fields):
                 max_len = max(
                     report_df[display_name].astype(str).map(len).max(),
                     len(display_name)
@@ -351,7 +515,6 @@ async def export_report(
                 worksheet.set_column(i, i, max_len)
         
         output.seek(0)
-        
         filename = f"report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
         
         return StreamingResponse(
@@ -359,165 +522,27 @@ async def export_report(
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             headers={"Content-Disposition": f"attachment; filename={filename}"}
         )
-        
     except HTTPException:
         raise
     except Exception as e:
         logger.error(f"Export error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
+def parse_datetime(dt_str):
+    """Парсит строку даты в datetime"""
+    try:
+        try:
+            return datetime.fromisoformat(dt_str)
+        except ValueError:
+            try:
+                return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S%z")
+            except ValueError:
+                return datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S.%f%z")
+    except Exception as e:
+        logger.error(f"Error parsing datetime {dt_str}: {str(e)}")
+        return datetime.min
 
-@app.get("/analysis_data", response_model=dict)
-async def get_analysis_data(
-    camera_id: str = None,
-    search: str = None,
-    page: int = 1,
-    limit: int = 20
-):
-    try:
-        logger.info(f"Request to /analysis_data with params: camera_id={camera_id}, search={search}, page={page}, limit={limit}")
-        
-        if not os.path.exists('data/analysis.json'):
-            return JSONResponse(
-                content={
-                    "data": [],
-                    "total": 0,
-                    "page": page,
-                    "limit": limit,
-                    "has_more": False
-                },
-                media_type="application/json"
-            )
-        
-        with open('data/analysis.json', 'r') as f:
-            data = json.load(f)
-        
-        # Фильтрация
-        if camera_id:
-            camera_ids = [int(id) for id in camera_id.split(',')]
-            data = [item for item in data if item['camera_id'] in camera_ids]
-        
-        if search:
-            search = search.lower()
-            data = [
-                item for item in data
-                if (search in item['track_id'].lower() or 
-                    search in item['vehicle_type'].lower())
-            ]
-        
-        # Сортировка и пагинация
-        data.sort(key=lambda x: x['timestamp'], reverse=True)
-        total = len(data)
-        start = (page - 1) * limit
-        end = start + limit
-        paginated_data = data[start:end]
-        
-        return JSONResponse(
-            content={
-                "data": paginated_data,
-                "total": total,
-                "page": page,
-                "limit": limit,
-                "has_more": end < total
-            },
-            media_type="application/json"
-        )
-        
-    except json.JSONDecodeError as e:
-        logger.error(f"Invalid JSON in analysis file: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail="Invalid data format in analysis file",
-            headers={"Content-Type": "application/json"}
-        )
-    except Exception as e:
-        logger.error(f"Error in /analysis_data: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=str(e),
-            headers={"Content-Type": "application/json"}
-        )
-    
-@app.get("/cameras")
-async def get_cameras():
-    """Получение списка всех камер"""
-    try:
-        if not os.path.exists(CAMERAS_FILE):
-            return JSONResponse(content=[], media_type="application/json")
-        
-        with open(CAMERAS_FILE, 'r') as f:
-            cameras = json.load(f)
-        
-        return JSONResponse(content=cameras, media_type="application/json")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/update_camera")
-async def update_camera(data: dict):
-    """Обновление данных камеры"""
-    try:
-        camera_id = data['camera_id']
-        new_data = data['data']
-        
-        # Загружаем текущие данные
-        cameras = []
-        if os.path.exists(CAMERAS_FILE):
-            with open(CAMERAS_FILE, 'r') as f:
-                cameras = json.load(f)
-        
-        # Ищем камеру для обновления
-        updated = False
-        for i, cam in enumerate(cameras):
-            if cam['id'] == camera_id:
-                cameras[i] = {**cam, **new_data}
-                updated = True
-                break
-        
-        # Если камера не найдена, добавляем новую
-        if not updated:
-            cameras.append(new_data)
-        
-        # Сохраняем обратно
-        with open(CAMERAS_FILE, 'w') as f:
-            json.dump(cameras, f, indent=2)
-        
-        return {"status": "success", "camera_id": camera_id}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/update_polygon")
-async def update_polygon(data: dict):
-    """Обновление полигона"""
-    try:
-        camera_id = data['camera_id']
-        polygon_data = data['data']
-        
-        # Загружаем текущие полигоны
-        polygons = []
-        if os.path.exists(POLYGONS_FILE):
-            with open(POLYGONS_FILE, 'r') as f:
-                polygons = json.load(f)
-        
-        # Ищем полигон для обновления
-        updated = False
-        for i, poly in enumerate(polygons):
-            if poly['polygon_id'] == polygon_data.get('polygon_id'):
-                polygons[i] = polygon_data
-                updated = True
-                break
-        
-        # Если полигон не найден, добавляем новый
-        if not updated:
-            polygons.append(polygon_data)
-        
-        # Сохраняем обратно
-        with open(POLYGONS_FILE, 'w') as f:
-            json.dump(polygons, f, indent=2)
-        
-        return {"status": "success", "camera_id": camera_id}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=8000)

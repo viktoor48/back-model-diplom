@@ -1,61 +1,38 @@
-import shutil
 import cv2
 import numpy as np
 from shapely.geometry import Point, Polygon
 import torch
 from ultralytics import YOLO
 from typing import Dict, List, Optional
-import json
-import os
 import logging
 import datetime
-from filelock import FileLock
+from databases import Database
+from dataclasses import dataclass
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+@dataclass
+class Detection:
+    bbox: List[int]  # [x, y, width, height]
+    vehicle_type: str
+    color: tuple
+    direction: str
+    confidence: float
+    weight: int
+    track_id: str = ""
+
 class VideoAnalyzer:
-    def __init__(self):
-        # Сначала инициализируем критически важные пути
-        self.analysis_file = 'data/analysis.json'
-        self.lock_file = 'data/analysis.lock'
+    def __init__(self, database: Database):
+        self.database = database
         
-        # Создаем директорию data если ее нет
-        try:
-            os.makedirs('data', exist_ok=True)
-            logger.info(f"Директория 'data' создана или уже существует")
-        except Exception as e:
-            logger.error(f"Ошибка создания директории 'data': {str(e)}")
-            raise
-        
-        # Инициализируем файл анализа (должно быть перед всеми операциями с файлами)
-        try:
-            self._init_analysis_file()
-        except Exception as e:
-            logger.error(f"Ошибка инициализации файла анализа: {str(e)}")
-            raise
-        
-        # Затем загружаем модель и данные
+        # Инициализация модели YOLO
         try:
             self.model = self._load_model()
-            logger.info("Модель YOLO успешно загружена")
+            logger.info("YOLO model loaded successfully")
         except Exception as e:
-            logger.error(f"Ошибка загрузки модели: {str(e)}")
+            logger.error(f"Error loading YOLO model: {str(e)}")
             raise
-        
-        try:
-            self.cameras = self._load_cameras()
-            logger.info(f"Загружены данные по {len(self.cameras)} камерам")
-        except Exception as e:
-            logger.error(f"Ошибка загрузки данных камер: {str(e)}")
-            self.cameras = {}
-        
-        try:
-            self.polygons = self._load_polygons()
-            logger.info(f"Загружены полигоны для {len(self.polygons)} камер")
-        except Exception as e:
-            logger.error(f"Ошибка загрузки полигонов: {str(e)}")
-            self.polygons = {}
         
         # Карта классов транспортных средств
         self.class_map = {
@@ -67,90 +44,26 @@ class VideoAnalyzer:
             5: ('Truck', (0, 140, 255))
         }
         
-        logger.info("Инициализация VideoAnalyzer завершена успешно")
-
-    def _init_analysis_file(self):
-        """Инициализация файла анализа с блокировкой"""
-        try:
-            with FileLock(self.lock_file):
-                if not os.path.exists(self.analysis_file):
-                    with open(self.analysis_file, 'w') as f:
-                        json.dump([], f)
-        except Exception as e:
-            logger.error(f"Error initializing analysis file: {str(e)}")
-            raise
-
-    def _save_detection(self, camera_id: int, detection: dict):
-        """Безопасное сохранение данных с блокировкой и резервированием"""
-        backup_path = f"{self.analysis_file}.bak"
-        temp_path = f"{self.analysis_file}.tmp"
+        # Кэш для данных камер и полигонов
+        self._cameras_cache = {}
+        self._polygons_cache = {}
+        self._last_cache_update = datetime.datetime.min
         
-        with FileLock(self.lock_file):  # Блокировка для потокобезопасности
-            try:
-                # 1. Создаем резервную копию
-                if os.path.exists(self.analysis_file):
-                    shutil.copyfile(self.analysis_file, backup_path)
-                
-                # 2. Загружаем существующие данные
-                data = []
-                if os.path.exists(self.analysis_file):
-                    with open(self.analysis_file, 'r') as f:
-                        try:
-                            data = json.load(f)
-                            if not isinstance(data, list):
-                                raise ValueError("Invalid data format: not a list")
-                        except json.JSONDecodeError:
-                            logger.error("Ошибка чтения JSON, восстанавливаем из резервной копии")
-                            if os.path.exists(backup_path):
-                                shutil.copyfile(backup_path, self.analysis_file)
-                                with open(self.analysis_file, 'r') as f:
-                                    data = json.load(f)
-                
-                # 3. Добавляем новую запись
-                timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
-                record = {
-                    "camera_id": camera_id,
-                    "track_id": f"trk_{timestamp[:10]}_{camera_id}_{len(data)}",
-                    "vehicle_type": detection['type'],
-                    "weight": detection['weight'],
-                    "timestamp": timestamp,
-                    "direction": detection['direction'],
-                    "bbox": detection['bbox'],
-                    "confidence": round(float(detection['confidence']), 4),  # Округление
-                    "frame_size": [1280, 720],
-                    "color": detection['color']  # Сохраняем цвет для визуализации
-                }
-                data.append(record)
-                
-                # 4. Атомарная запись через временный файл
-                with open(temp_path, 'w') as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
-                
-                # 5. Заменяем оригинальный файл
-                os.replace(temp_path, self.analysis_file)
-                
-                logger.debug(f"Сохранено обнаружение: {record['track_id']}")
-                
-            except Exception as e:
-                logger.error(f"Ошибка сохранения: {str(e)}")
-                # Восстановление из резервной копии при ошибке
-                if os.path.exists(backup_path) and not os.path.exists(self.analysis_file):
-                    shutil.copyfile(backup_path, self.analysis_file)
-                raise
-            finally:
-                # Удаляем временные файлы
-                for path in [backup_path, temp_path]:
-                    if os.path.exists(path):
-                        try:
-                            os.remove(path)
-                        except Exception as e:
-                            logger.warning(f"Не удалось удалить временный файл {path}: {str(e)}")
+        logger.info("VideoAnalyzer initialized successfully")
+
+    async def initialize(self):
+        """Асинхронная инициализация (загрузка данных из БД)"""
+        try:
+            await self._load_cameras()
+            await self._load_polygons()
+            logger.info(f"Loaded data for {len(self._cameras_cache)} cameras")
+        except Exception as e:
+            logger.error(f"Error initializing analyzer: {str(e)}")
+            raise
 
     def _load_model(self):
         """Загрузка обученной модели YOLO"""
-        from ultralytics import YOLO
         try:
-            # Укажите правильный путь к вашей модели
             model_path = "models/best.pt"
             model = YOLO(model_path)
             
@@ -158,50 +71,71 @@ class VideoAnalyzer:
             device = 'cuda' if torch.cuda.is_available() else 'cpu'
             model.to(device)
             
-            logger.info(f"Модель YOLO успешно загружена с устройства {device}")
+            logger.info(f"Model loaded on device: {device}")
             return model
         except Exception as e:
-            logger.error(f"Ошибка загрузки модели: {str(e)}")
+            logger.error(f"Error loading model: {str(e)}")
             raise
 
-    def _load_cameras(self) -> Dict:
-        """Загрузка данных о камерах"""
+    async def _load_cameras(self):
+        """Загрузка данных о камерах из БД"""
         try:
-            with open('data/cameras.json') as f:
-                cameras = json.load(f)
-                return {cam['id']: cam for cam in cameras}
+            query = "SELECT * FROM cameras"
+            cameras = await self.database.fetch_all(query)
+            self._cameras_cache = {cam['id']: dict(cam) for cam in cameras}
+            logger.info(f"Loaded {len(self._cameras_cache)} cameras from DB")
         except Exception as e:
-            logger.error(f"Ошибка загрузки cameras.json: {str(e)}")
-            return {}
+            logger.error(f"Error loading cameras: {str(e)}")
+            self._cameras_cache = {}
 
-    def _load_polygons(self) -> Dict:
-        """Загрузка полигонов"""
+    async def _load_polygons(self):
+        """Загрузка полигонов из БД"""
         try:
-            with open('data/polygons.geojson') as f:
-                polygons = json.load(f)
-                
-            result = {}
+            query = """
+                SELECT p.*, c.stream_url 
+                FROM polygons p
+                LEFT JOIN cameras c ON p.camera_id = c.id
+            """
+            polygons = await self.database.fetch_all(query)
+            
+            self._polygons_cache = {}
             for poly in polygons:
                 cam_id = poly['camera_id']
-                if cam_id not in result:
-                    result[cam_id] = []
+                if cam_id not in self._polygons_cache:
+                    self._polygons_cache[cam_id] = []
                 
                 try:
-                    result[cam_id].append({
-                        'polygon': Polygon(poly['geometry']['coordinates'][0]),
-                        'direction': poly['direction']
+                    # Предполагаем, что coordinates хранится как JSON в БД
+                    coords = poly['coordinates']['coordinates'][0]  # GeoJSON формат
+                    self._polygons_cache[cam_id].append({
+                        'polygon': Polygon(coords),
+                        'direction': poly.get('direction', 'unknown'),
+                        'name': poly.get('name', '')
                     })
                 except Exception as e:
-                    logger.warning(f"Ошибка обработки полигона: {str(e)}")
+                    logger.warning(f"Error processing polygon: {str(e)}")
             
-            return result
+            logger.info(f"Loaded polygons for {len(self._polygons_cache)} cameras")
         except Exception as e:
-            logger.error(f"Ошибка загрузки polygons.geojson: {str(e)}")
-            return {}
-        
-    def analyze_frame(self, frame: np.ndarray, camera_id: int) -> Dict:
+            logger.error(f"Error loading polygons: {str(e)}")
+            self._polygons_cache = {}
+
+    async def _refresh_cache_if_needed(self):
+        """Обновляет кэш данных, если прошло больше 5 минут с последнего обновления"""
+        now = datetime.datetime.now()
+        if (now - self._last_cache_update).total_seconds() > 300:  # 5 минут
+            await self._load_cameras()
+            await self._load_polygons()
+            self._last_cache_update = now
+            logger.info("Refreshed camera and polygon cache")
+
+    async def analyze_frame(self, frame: np.ndarray, camera_id: int) -> Dict:
         """Анализ одного кадра с обученной моделью"""
         try:
+            # Обновляем кэш при необходимости
+            await self._refresh_cache_if_needed()
+            
+            # Получаем результаты от YOLO
             results = self.model(
                 frame,
                 imgsz=1280,
@@ -222,42 +156,50 @@ class VideoAnalyzer:
                     
                 vehicle_name, vehicle_color = self.class_map[class_id]
                 center = Point((x1 + x2) / 2, (y1 + y2) / 2)
-                direction = self._get_direction(center, camera_id)
+                direction = await self._get_direction(center, camera_id)
                 
-                detection_data = {
-                    'bbox': [x1, y1, x2 - x1, y2 - y1],
-                    'type': vehicle_name,
-                    'color': vehicle_color,
-                    'direction': direction,
-                    'confidence': confidence,
-                    'weight': 3 if vehicle_name == 'Truck' else 1
-                }
+                # Создаем объект обнаружения
+                detection = Detection(
+                    bbox=[x1, y1, x2 - x1, y2 - y1],
+                    vehicle_type=vehicle_name,
+                    color=vehicle_color,
+                    direction=direction,
+                    confidence=confidence,
+                    weight=3 if vehicle_name == 'Truck' else 1
+                )
                 
-                detections.append(detection_data)
-                self._save_detection(camera_id, detection_data)  # Сохраняем каждое обнаружение
+                detections.append(detection)
+                
+                # Сохраняем обнаружение в БД
+                await self._save_detection(camera_id, detection)
             
             return {
-                'detections': detections,
+                'detections': [self._detection_to_dict(d) for d in detections],
                 'frame': self._draw_results(frame.copy(), detections)
             }
             
         except Exception as e:
-            logger.error(f"Ошибка анализа кадра: {str(e)}")
+            logger.error(f"Frame analysis error: {str(e)}")
             return {'detections': [], 'frame': frame}
 
-    def _get_direction(self, point: Point, camera_id: int) -> str:
+    async def _get_direction(self, point: Point, camera_id: int) -> str:
         """Определение направления движения"""
-        # Сначала проверяем полигоны
-        for zone in self.polygons.get(camera_id, []):
+        # Проверяем полигоны из кэша
+        for zone in self._polygons_cache.get(camera_id, []):
             if zone['polygon'].contains(point):
                 return zone['direction']
         
-        # Затем зоны камеры
-        if camera_id in self.cameras:
-            for zone in self.cameras[camera_id].get('zones', []):
-                poly = Polygon(self._normalize_points(zone['points'], (720, 1280)))
-                if poly.contains(point):
-                    return zone['name'].replace('_zone', '')
+        # Проверяем зоны камеры (если есть в кэше)
+        if camera_id in self._cameras_cache:
+            camera_data = self._cameras_cache[camera_id]
+            if 'zones' in camera_data and camera_data['zones']:
+                for zone in camera_data['zones']:
+                    try:
+                        poly = Polygon(self._normalize_points(zone['points'], (720, 1280)))
+                        if poly.contains(point):
+                            return zone['name'].replace('_zone', '')
+                    except Exception as e:
+                        logger.warning(f"Error processing camera zone: {str(e)}")
         
         return 'unknown'
 
@@ -266,23 +208,62 @@ class VideoAnalyzer:
         h, w = shape[:2]
         return [[int(x * w), int(y * h)] for x, y in points]
 
-    def _draw_results(self, frame: np.ndarray, detections: List[Dict]) -> np.ndarray:
+    def _draw_results(self, frame: np.ndarray, detections: List[Detection]) -> np.ndarray:
         """Отрисовка результатов с цветами по классам"""
         for det in detections:
-            x, y, w, h = det['bbox']
-            color = det['color']  # Используем цвет из detection
+            x, y, w, h = det.bbox
+            color = det.color
             
             # Рисуем bounding box
             cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
             
             # Рисуем текст с фоном
-            label = f"{det['type']} {det['confidence']:.2f}"
+            label = f"{det.vehicle_type} {det.confidence:.2f}"
             (text_width, text_height), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
             
             # Фон для текста
             cv2.rectangle(frame, (x, y - text_height - 10), (x + text_width, y), color, -1)
             cv2.putText(
                 frame, label,
-                (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1  # Чёрный текст
+                (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1
             )
         return frame
+
+    async def _save_detection(self, camera_id: int, detection: Detection):
+        """Сохранение обнаружения в базу данных"""
+        try:
+            query = """
+                INSERT INTO analysis_results 
+                (camera_id, track_id, vehicle_type, direction, confidence, weight, timestamp)
+                VALUES (:camera_id, :track_id, :vehicle_type, :direction, :confidence, :weight, :timestamp)
+            """
+            
+            timestamp = datetime.datetime.now(datetime.timezone.utc)
+            track_id = f"trk_{timestamp.strftime('%Y%m%d')}_{camera_id}_{hash(detection)}"[:64]
+            
+            values = {
+                "camera_id": camera_id,
+                "track_id": track_id,
+                "vehicle_type": detection.vehicle_type,
+                "direction": detection.direction,
+                "confidence": round(float(detection.confidence), 4),
+                "weight": detection.weight,
+                "timestamp": timestamp
+            }
+            
+            await self.database.execute(query, values)
+            logger.debug(f"Saved detection to DB: {track_id}")
+            
+        except Exception as e:
+            logger.error(f"Error saving detection to DB: {str(e)}")
+
+    def _detection_to_dict(self, detection: Detection) -> dict:
+        """Конвертирует объект Detection в словарь"""
+        return {
+            'bbox': detection.bbox,
+            'type': detection.vehicle_type,
+            'color': detection.color,
+            'direction': detection.direction,
+            'confidence': detection.confidence,
+            'weight': detection.weight
+        }

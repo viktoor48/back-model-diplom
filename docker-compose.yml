@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:13-alpine  # Используем более легкий alpine-образ
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_strong_password  # Замените на реальный пароль
+      POSTGRES_DB: video_analysis
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:  # Добавляем healthcheck для проверки готовности БД
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile  # Явно указываем Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy  # Ждем пока БД станет доступной
+    environment:
+      DATABASE_URL: "postgresql://postgres:your_strong_password@db:5432/video_analysis"
+    volumes:
+      - .:/app
+    restart: unless-stopped  # Автоперезапуск при падении
+
+volumes:
+  pg_data:
