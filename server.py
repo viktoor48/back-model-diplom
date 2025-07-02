@@ -208,15 +208,6 @@ async def get_current_detections():
     with processor.lock:
         return processor.detections
 
-@app.get("/cameras")
-async def get_cameras():
-    try:
-        cameras = list(analyzer.cameras.values())
-        return JSONResponse(content=cameras)  # Явно указываем JSON-ответ
-    except Exception as e:
-        logger.error(f"Error getting cameras: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
 @app.get("/test_data")
 async def test_data():
     return JSONResponse(
@@ -515,6 +506,87 @@ async def update_polygon(data: dict):
             json.dump(polygons, f, indent=2)
         
         return {"status": "success", "camera_id": camera_id}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Добавляем новые эндпоинты для работы с зонами и полигонами
+
+@app.get("/cameras/{camera_id}/zones")
+async def get_camera_zones(camera_id: int):
+    """Получение зон для конкретной камеры"""
+    try:
+        if not os.path.exists(CAMERAS_FILE):
+            return JSONResponse(content=[], status_code=200)
+        
+        with open(CAMERAS_FILE, 'r') as f:
+            cameras = json.load(f)
+        
+        camera = next((c for c in cameras if c['id'] == camera_id), None)
+        if not camera:
+            return JSONResponse(content=[], status_code=200)
+        
+        return JSONResponse(content=camera.get('zones', []))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.put("/cameras/{camera_id}/zones")
+async def update_camera_zones(camera_id: int, zones: List[dict]):
+    """Обновление зон для камеры"""
+    try:
+        with open(CAMERAS_FILE, 'r') as f:
+            cameras = json.load(f)
+        
+        camera_index = next((i for i, c in enumerate(cameras) if c['id'] == camera_id), None)
+        if camera_index is None:
+            raise HTTPException(status_code=404, detail="Camera not found")
+        
+        cameras[camera_index]['zones'] = zones
+        
+        with open(CAMERAS_FILE, 'w') as f:
+            json.dump(cameras, f, indent=2)
+        
+        return JSONResponse(content={"status": "success"})
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/cameras/{camera_id}/polygons")
+async def get_camera_polygons(camera_id: int):
+    """Получение полигонов для конкретной камеры"""
+    try:
+        if not os.path.exists(POLYGONS_FILE):
+            return JSONResponse(content=[], status_code=200)
+        
+        with open(POLYGONS_FILE, 'r') as f:
+            polygons = json.load(f)
+        
+        camera_polygons = [p for p in polygons if p['camera_id'] == camera_id]
+        return JSONResponse(content=camera_polygons)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.put("/cameras/{camera_id}/polygons")
+async def update_camera_polygons(camera_id: int, polygons: List[dict]):
+    """Обновление полигонов для камеры"""
+    try:
+        all_polygons = []
+        if os.path.exists(POLYGONS_FILE):
+            with open(POLYGONS_FILE, 'r') as f:
+                all_polygons = json.load(f)
+        
+        # Удаляем старые полигоны для этой камеры
+        all_polygons = [p for p in all_polygons if p['camera_id'] != camera_id]
+        
+        # Добавляем новые (с автоматическим ID)
+        for i, polygon in enumerate(polygons):
+            polygon['camera_id'] = camera_id
+            polygon['polygon_id'] = polygon.get('polygon_id', f"{camera_id}_{i}")
+            all_polygons.append(polygon)
+        
+        with open(POLYGONS_FILE, 'w') as f:
+            json.dump(all_polygons, f, indent=2)
+        
+        return JSONResponse(content={"status": "success"})
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
